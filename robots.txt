@@ -1,0 +1,6 @@
+mai.22 19:08
+
+User-agent: *
+Allow: /
+Sitemap: https://wasolarsystems.wasolarsystems.workers.dev/sitemap.xml
+
