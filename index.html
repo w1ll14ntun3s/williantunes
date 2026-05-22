@@ -12,7 +12,6 @@
   <!-- Font Awesome 6 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
-    /* Garantir rolagem suave em toda a página */
     html {
       scroll-behavior: smooth;
     }
@@ -26,9 +25,30 @@
     .modal-transition {
       transition: opacity 0.25s ease, visibility 0.25s ease;
     }
-    /* Ajuste para evitar que cabeçalho fixo cubra o conteúdo ao rolar */
     section {
       scroll-margin-top: 80px;
+    }
+    /* Botão WhatsApp flutuante opcional */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25D366;
+      color: white;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      z-index: 40;
+      transition: transform 0.2s;
+    }
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      color: white;
     }
   </style>
 </head>
@@ -48,17 +68,16 @@
         <a href="#depoimentos" class="nav-link hover:text-green-600 transition">Depoimentos</a>
         <a href="#contato" class="nav-link hover:text-green-600 transition">Contato</a>
       </nav>
-      <button id="openModalBtnHeader" class="bg-green-600 hover:bg-green-700 text-white px-5 py-2 rounded-full shadow-md transition flex items-center gap-2"><i class="fas fa-solar-panel"></i> Orçamento</button>
+      <button id="openModalBtnHeader" class="bg-green-600 hover:bg-green-700 text-white px-5 py-2 rounded-full shadow-md transition flex items-center gap-2"><i class="fab fa-whatsapp"></i> Orçamento via WhatsApp</button>
       <button id="mobileMenuBtn" class="md:hidden text-gray-600 text-2xl focus:outline-none"><i class="fas fa-bars"></i></button>
     </div>
-    <!-- Mobile menu -->
     <div id="mobileMenu" class="hidden md:hidden bg-white border-t py-4 px-5 flex flex-col space-y-3 shadow-inner">
       <a href="#solucoes" class="nav-link hover:text-green-600">Soluções</a>
       <a href="#beneficios" class="nav-link hover:text-green-600">Benefícios</a>
       <a href="#simulador" class="nav-link hover:text-green-600">Simulador</a>
       <a href="#depoimentos" class="nav-link hover:text-green-600">Depoimentos</a>
       <a href="#contato" class="nav-link hover:text-green-600">Contato</a>
-      <button id="openModalBtnMobile" class="bg-green-600 text-white px-4 py-2 rounded-full w-full">Solicitar Orçamento</button>
+      <button id="openModalBtnMobile" class="bg-green-600 text-white px-4 py-2 rounded-full w-full"><i class="fab fa-whatsapp mr-1"></i> Orçamento via WhatsApp</button>
     </div>
   </header>
 
@@ -70,7 +89,6 @@
           <h1 class="text-4xl md:text-5xl font-extrabold text-gray-800 leading-tight">Energia solar <span class="text-green-600">inteligente</span> para seu negócio</h1>
           <p class="text-gray-600 text-lg mt-4">Soluções sob medida para áreas rurais, data centers e pequenas/médias empresas. Reduza até 70% na conta de luz com sustentabilidade e alta performance.</p>
           <div class="mt-8 flex flex-wrap gap-4 justify-center md:justify-start">
-            <!-- Botão que leva ao simulador -->
             <a href="#simulador" class="bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-3 rounded-full shadow-lg transition flex items-center gap-2 inline-block"><i class="fas fa-calculator"></i> Simular economia</a>
             <a href="#solucoes" class="border-2 border-green-600 text-green-700 hover:bg-green-50 px-6 py-3 rounded-full font-semibold transition">Conhecer soluções</a>
           </div>
@@ -89,7 +107,6 @@
           <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mt-2">Energia que se adapta ao seu mundo</h2>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <!-- Card Rural -->
           <div class="bg-gray-50 rounded-2xl p-6 shadow-md card-hover border border-gray-100">
             <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"><i class="fas fa-tractor text-green-700 text-3xl"></i></div>
             <h3 class="text-xl font-bold text-center text-gray-800">Áreas Rurais</h3>
@@ -101,7 +118,6 @@
             </ul>
             <button class="open-modal-orcamento w-full mt-6 bg-white border border-green-600 text-green-700 py-2 rounded-full hover:bg-green-50 transition font-medium">Solicitar orçamento</button>
           </div>
-          <!-- Card Data Centers -->
           <div class="bg-gray-50 rounded-2xl p-6 shadow-md card-hover border border-gray-100">
             <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"><i class="fas fa-database text-blue-700 text-3xl"></i></div>
             <h3 class="text-xl font-bold text-center text-gray-800">Data Centers</h3>
@@ -113,7 +129,6 @@
             </ul>
             <button class="open-modal-orcamento w-full mt-6 bg-white border border-green-600 text-green-700 py-2 rounded-full hover:bg-green-50 transition font-medium">Solicitar orçamento</button>
           </div>
-          <!-- Card PMEs -->
           <div class="bg-gray-50 rounded-2xl p-6 shadow-md card-hover border border-gray-100">
             <div class="bg-yellow-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"><i class="fas fa-building text-yellow-700 text-3xl"></i></div>
             <h3 class="text-xl font-bold text-center text-gray-800">Pequenas e Médias Empresas</h3>
@@ -184,18 +199,18 @@
       </div>
     </section>
 
-    <!-- CONTATO -->
+    <!-- CONTATO - Agora envia para WhatsApp -->
     <section id="contato" class="py-16 bg-white">
       <div class="container mx-auto px-5 max-w-3xl">
-        <div class="text-center"><h2 class="text-3xl font-bold text-gray-800">Fale com um especialista</h2><p class="text-gray-500 mb-6">Preencha e receba um diagnóstico gratuito para seu negócio</p></div>
+        <div class="text-center"><h2 class="text-3xl font-bold text-gray-800">Fale com um especialista</h2><p class="text-gray-500 mb-6">Preencha e envie diretamente pelo WhatsApp</p></div>
         <form id="contatoForm" class="bg-gray-50 p-6 rounded-2xl shadow-md">
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
             <input type="text" id="nome" placeholder="Nome completo*" class="border p-3 rounded-xl w-full" required>
             <input type="email" id="email" placeholder="E-mail*" class="border p-3 rounded-xl w-full" required>
           </div>
-          <div class="mb-4"><input type="tel" id="telefone" placeholder="Telefone" class="border p-3 rounded-xl w-full"></div>
+          <div class="mb-4"><input type="tel" id="telefone" placeholder="Telefone com DDD*" class="border p-3 rounded-xl w-full" required></div>
           <div class="mb-4"><textarea id="mensagem" rows="3" placeholder="Conte-nos sobre seu projeto ou dúvida*" class="border p-3 rounded-xl w-full" required></textarea></div>
-          <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 rounded-xl transition"><i class="fas fa-paper-plane mr-2"></i>Enviar mensagem</button>
+          <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 rounded-xl transition flex items-center justify-center gap-2"><i class="fab fa-whatsapp text-xl"></i> Enviar via WhatsApp</button>
           <p id="formFeedback" class="text-sm mt-3 text-center hidden"></p>
         </form>
       </div>
@@ -205,35 +220,59 @@
   <footer class="bg-gray-900 text-gray-300 py-10">
     <div class="container mx-auto px-5 grid grid-cols-1 md:grid-cols-3 gap-6 text-center md:text-left">
       <div><i class="fas fa-sun text-yellow-400 text-2xl mb-2 inline-block"></i><h3 class="font-bold text-white text-lg">WA Solar & Systems</h3><p class="text-sm">Energia solar com propósito técnico e sustentável.</p></div>
-      <div><i class="fas fa-phone-alt mr-2"></i> (11) 98171-3508<br><i class="fas fa-envelope mr-2"></i> contato@wasolarsystems.com.br<br><i class="fas fa-map-marker-alt mr-2"></i> Av. Solar, 1000 - SP</div>
+      <div><i class="fab fa-whatsapp mr-2 text-green-400"></i> (11) 98171-3508<br><i class="fas fa-envelope mr-2"></i> contato@wasolarsystems.com.br<br><i class="fas fa-map-marker-alt mr-2"></i> Av. Solar, 1000 - SP</div>
       <div><i class="fab fa-instagram mr-2"></i> @wasolarsystems  <i class="fab fa-linkedin ml-3"></i> /company/wasolarsystems<br>© 2025 Todos os direitos reservados</div>
     </div>
   </footer>
 
-  <!-- MODAL ORÇAMENTO -->
+  <!-- Botão WhatsApp flutuante -->
+  <a href="https://wa.me/5511981713508?text=Olá!%20Gostaria%20de%20mais%20informações%20sobre%20energia%20solar." target="_blank" class="whatsapp-float">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- MODAL ORÇAMENTO (agora envia para WhatsApp) -->
   <div id="modalOrcamento" class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 transition-all duration-300 invisible opacity-0 modal-transition">
     <div class="bg-white w-full max-w-md mx-4 rounded-2xl shadow-2xl p-6 relative">
       <button id="closeModalBtn" class="absolute top-3 right-4 text-gray-400 hover:text-gray-700 text-2xl">&times;</button>
-      <h3 class="text-2xl font-bold text-gray-800 mb-2"><i class="fas fa-file-invoice-dollar text-green-500"></i> Solicitar orçamento</h3>
-      <p class="text-gray-500 mb-4">Preencha seus dados, retornamos em até 24h.</p>
+      <h3 class="text-2xl font-bold text-gray-800 mb-2"><i class="fab fa-whatsapp text-green-500"></i> Solicitar orçamento via WhatsApp</h3>
+      <p class="text-gray-500 mb-4">Preencha e enviaremos seu orçamento pelo WhatsApp.</p>
       <form id="modalForm">
         <input type="text" id="modalNome" placeholder="Nome completo*" class="w-full border p-3 rounded-xl mb-3" required>
         <input type="email" id="modalEmail" placeholder="E-mail*" class="w-full border p-3 rounded-xl mb-3" required>
-        <input type="tel" id="modalTelefone" placeholder="Telefone" class="w-full border p-3 rounded-xl mb-3">
+        <input type="tel" id="modalTelefone" placeholder="Telefone com DDD*" class="w-full border p-3 rounded-xl mb-3" required>
         <select id="modalInteresse" class="w-full border p-3 rounded-xl mb-3">
           <option value="rural">Área Rural</option>
           <option value="datacenter">Data Center</option>
           <option value="empresa">Pequena/Média Empresa</option>
         </select>
         <textarea id="modalMsg" rows="2" placeholder="Mensagem adicional" class="w-full border p-3 rounded-xl mb-3"></textarea>
-        <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 rounded-xl">Enviar orçamento</button>
+        <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 rounded-xl flex items-center justify-center gap-2"><i class="fab fa-whatsapp text-xl"></i> Enviar orçamento via WhatsApp</button>
         <p id="modalFeedback" class="text-xs text-center mt-2 text-green-600 hidden"></p>
       </form>
     </div>
   </div>
 
   <script>
-    // Garantir que links âncora nativos funcionem (fallback)
+    // Número do WhatsApp configurado
+    const WHATSAPP_NUMBER = '5511981713508';
+    
+    // Função para enviar mensagem ao WhatsApp
+    function sendToWhatsApp(nome, email, telefone, mensagem, interesse = null) {
+      let texto = `*NOVO CONTATO - WA SOLAR & SYSTEMS*%0A%0A`;
+      texto += `*Nome:* ${nome}%0A`;
+      texto += `*E-mail:* ${email}%0A`;
+      texto += `*Telefone:* ${telefone}%0A`;
+      if (interesse) {
+        texto += `*Interesse:* ${interesse}%0A`;
+      }
+      texto += `*Mensagem:* ${mensagem}%0A%0A`;
+      texto += `Enviado pelo site WA Solar & Systems`;
+      
+      const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${texto}`;
+      window.open(url, '_blank');
+    }
+    
+    // Links âncora
     document.querySelectorAll('.nav-link').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
         const targetId = this.getAttribute('href');
@@ -246,7 +285,7 @@
         }
       });
     });
-
+    
     // Modal
     const modal = document.getElementById('modalOrcamento');
     const openModalButtons = document.querySelectorAll('#openModalBtnHeader, #openModalBtnMobile, .open-modal-orcamento');
@@ -298,18 +337,21 @@
       resultadoDiv.innerHTML = `<i class="fas fa-chart-line text-green-700 mr-1"></i> Sua economia estimada é de ${economiaPercent}% e payback de ${payback} anos! Baseado no perfil ${tipoSelect.options[tipoSelect.selectedIndex].text}.`;
     });
     
-    // Formulário de contato
+    // Formulário de contato da seção -> WhatsApp
     const contatoForm = document.getElementById('contatoForm');
     const formFeedback = document.getElementById('formFeedback');
+    
     contatoForm.addEventListener('submit', (e) => {
       e.preventDefault();
       const nome = document.getElementById('nome').value.trim();
       const email = document.getElementById('email').value.trim();
+      const telefone = document.getElementById('telefone').value.trim();
       const mensagem = document.getElementById('mensagem').value.trim();
-      if(!nome || !email || !mensagem) {
+      
+      if(!nome || !email || !telefone || !mensagem) {
         formFeedback.classList.remove('hidden');
         formFeedback.classList.add('text-red-600');
-        formFeedback.innerText = 'Por favor, preencha nome, e-mail e mensagem.';
+        formFeedback.innerText = 'Por favor, preencha todos os campos obrigatórios.';
         return;
       }
       if(!email.includes('@') || !email.includes('.')) {
@@ -318,23 +360,32 @@
         formFeedback.innerText = 'E-mail inválido.';
         return;
       }
+      
+      // Envia para o WhatsApp
+      sendToWhatsApp(nome, email, telefone, mensagem);
+      
       formFeedback.classList.remove('hidden', 'text-red-600');
       formFeedback.classList.add('text-green-600');
-      formFeedback.innerText = 'Mensagem enviada! Em breve um consultor entrará em contato.';
+      formFeedback.innerText = 'Redirecionando para o WhatsApp... Envie a mensagem para finalizar.';
       contatoForm.reset();
-      setTimeout(() => { formFeedback.classList.add('hidden'); }, 4000);
+      setTimeout(() => { formFeedback.classList.add('hidden'); }, 5000);
     });
     
-    // Modal form
+    // Modal form -> WhatsApp
     const modalForm = document.getElementById('modalForm');
     const modalFeedback = document.getElementById('modalFeedback');
+    
     modalForm.addEventListener('submit', (e) => {
       e.preventDefault();
       const nomeModal = document.getElementById('modalNome').value.trim();
       const emailModal = document.getElementById('modalEmail').value.trim();
-      if(!nomeModal || !emailModal) {
+      const telefoneModal = document.getElementById('modalTelefone').value.trim();
+      const interesse = document.getElementById('modalInteresse').options[document.getElementById('modalInteresse').selectedIndex].text;
+      const msgModal = document.getElementById('modalMsg').value.trim();
+      
+      if(!nomeModal || !emailModal || !telefoneModal) {
         modalFeedback.classList.remove('hidden');
-        modalFeedback.innerText = 'Preencha nome e e-mail.';
+        modalFeedback.innerText = 'Preencha nome, e-mail e telefone.';
         modalFeedback.classList.add('text-red-600');
         return;
       }
@@ -344,11 +395,16 @@
         modalFeedback.classList.add('text-red-600');
         return;
       }
+      
+      const mensagemCompleta = `Olá! Meu nome é ${nomeModal}.%0AInteresse: ${interesse}%0A${msgModal ? `%0ADetalhes: ${msgModal}` : ''}`;
+      
+      sendToWhatsApp(nomeModal, emailModal, telefoneModal, mensagemCompleta, interesse);
+      
       modalFeedback.classList.remove('hidden', 'text-red-600');
       modalFeedback.classList.add('text-green-600');
-      modalFeedback.innerText = 'Solicitação enviada! Entraremos em contato.';
+      modalFeedback.innerText = 'Redirecionando para o WhatsApp... Envie a mensagem para finalizar.';
       modalForm.reset();
-      setTimeout(() => { closeModal(); modalFeedback.classList.add('hidden'); }, 1500);
+      setTimeout(() => { closeModal(); modalFeedback.classList.add('hidden'); }, 2000);
     });
     
     // Mobile menu toggle
@@ -363,4 +419,4 @@
     mobileLinks.forEach(link => link.addEventListener('click', () => { mobileMenu.classList.add('hidden'); }));
   </script>
 </body>
-</html>
+</html> your HTML text here
