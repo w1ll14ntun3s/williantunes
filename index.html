@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Sol Rural & Tech - Energia solar para áreas rurais, data centers e pequenas/médias empresas. Economia, sustentabilidade e independência energética.">
+  <meta name="keywords" content="energia solar, áreas rurais, data centers, pequenas empresas, economia solar, sustentabilidade">
+  <meta name="author" content="Sol Rural & Tech">
+  <title>Sol Rural & Tech | Energia Solar para todos os negócios</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* Garantir rolagem suave em toda a página */
+    html {
+      scroll-behavior: smooth;
+    }
+    .card-hover {
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .card-hover:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 25px -12px rgba(0, 0, 0, 0.15);
+    }
+    .modal-transition {
+      transition: opacity 0.25s ease, visibility 0.25s ease;
+    }
+    /* Ajuste para evitar que cabeçalho fixo cubra o conteúdo ao rolar */
+    section {
+      scroll-margin-top: 80px;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 font-sans antialiased">
+
+  <!-- HEADER -->
+  <header class="bg-white shadow-md sticky top-0 z-30">
+    <div class="container mx-auto px-5 py-4 flex flex-wrap justify-between items-center">
+      <div class="flex items-center space-x-2">
+        <i class="fas fa-sun text-yellow-500 text-3xl"></i>
+        <span class="font-bold text-2xl text-green-700">Sol<span class="text-blue-600">Rural&Tech</span></span>
+      </div>
+      <nav class="hidden md:flex space-x-8 text-gray-700 font-medium">
+        <a href="#solucoes" class="nav-link hover:text-green-600 transition">Soluções</a>
+        <a href="#beneficios" class="nav-link hover:text-green-600 transition">Benefícios</a>
+        <a href="#simulador" class="nav-link hover:text-green-600 transition">Simulador</a>
+        <a href="#depoimentos" class="nav-link hover:text-green-600 transition">Depoimentos</a>
+        <a href="#contato" class="nav-link hover:text-green-600 transition">Contato</a>
+      </nav>
+      <button id="openModalBtnHeader" class="bg-green-600 hover:bg-green-700 text-white px-5 py-2 rounded-full shadow-md transition flex items-center gap-2"><i class="fas fa-solar-panel"></i> Orçamento</button>
+      <button id="mobileMenuBtn" class="md:hidden text-gray-600 text-2xl focus:outline-none"><i class="fas fa-bars"></i></button>
+    </div>
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="hidden md:hidden bg-white border-t py-4 px-5 flex flex-col space-y-3 shadow-inner">
+      <a href="#solucoes" class="nav-link hover:text-green-600">Soluções</a>
+      <a href="#beneficios" class="nav-link hover:text-green-600">Benefícios</a>
+      <a href="#simulador" class="nav-link hover:text-green-600">Simulador</a>
+      <a href="#depoimentos" class="nav-link hover:text-green-600">Depoimentos</a>
+      <a href="#contato" class="nav-link hover:text-green-600">Contato</a>
+      <button id="openModalBtnMobile" class="bg-green-600 text-white px-4 py-2 rounded-full w-full">Solicitar Orçamento</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="bg-gradient-to-r from-green-50 to-blue-50 py-16 md:py-24">
+      <div class="container mx-auto px-5 flex flex-col md:flex-row items-center justify-between gap-10">
+        <div class="flex-1 text-center md:text-left">
+          <h1 class="text-4xl md:text-5xl font-extrabold text-gray-800 leading-tight">Energia solar <span class="text-green-600">inteligente</span> para seu negócio</h1>
+          <p class="text-gray-600 text-lg mt-4">Soluções sob medida para áreas rurais, data centers e pequenas/médias empresas. Reduza até 70% na conta de luz com sustentabilidade e alta performance.</p>
+          <div class="mt-8 flex flex-wrap gap-4 justify-center md:justify-start">
+            <!-- Botão que leva ao simulador -->
+            <a href="#simulador" class="bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-3 rounded-full shadow-lg transition flex items-center gap-2 inline-block"><i class="fas fa-calculator"></i> Simular economia</a>
+            <a href="#solucoes" class="border-2 border-green-600 text-green-700 hover:bg-green-50 px-6 py-3 rounded-full font-semibold transition">Conhecer soluções</a>
+          </div>
+        </div>
+        <div class="flex-1 flex justify-center">
+          <img src="https://placehold.co/500x400/e2f0e6/2c6e2c?text=Energia+Solar" alt="Painéis solares" class="rounded-2xl shadow-2xl max-w-full h-auto">
+        </div>
+      </div>
+    </section>
+
+    <!-- SOLUÇÕES -->
+    <section id="solucoes" class="py-16 bg-white">
+      <div class="container mx-auto px-5">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+          <span class="text-green-600 font-semibold uppercase tracking-wide">Soluções personalizadas</span>
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mt-2">Energia que se adapta ao seu mundo</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Card Rural -->
+          <div class="bg-gray-50 rounded-2xl p-6 shadow-md card-hover border border-gray-100">
+            <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"><i class="fas fa-tractor text-green-700 text-3xl"></i></div>
+            <h3 class="text-xl font-bold text-center text-gray-800">Áreas Rurais</h3>
+            <p class="text-gray-600 text-center mt-2">Irrigação, cercas elétricas, ordenha mecânica e bombeamento solar. Energia confiável off-grid ou híbrida para reduzir custos no campo.</p>
+            <ul class="mt-4 space-y-2 text-sm text-gray-700">
+              <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Autonomia em regiões remotas</li>
+              <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Sistemas de bombeamento solar</li>
+              <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Linha de crédito rural</li>
+            </ul>
+            <button class="open-modal-orcamento w-full mt-6 bg-white border border-green-600 text-green-700 py-2 rounded-full hover:bg-green-50 transition font-medium">Solicitar orçamento</button>
+          </div>
+          <!-- Card Data Centers -->
+          <div class="bg-gray-50 rounded-2xl p-6 shadow-md card-hover border border-gray-100">
+            <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"><i class="fas fa-database text-blue-700 text-3xl"></i></div>
+            <h3 class="text-xl font-bold text-center text-gray-800">Data Centers</h3>
+            <p class="text-gray-600 text-center mt-2">Eficiência energética, redução da pegada de carbono e refrigeração otimizada com geração fotovoltaica para ambientes críticos 24/7.</p>
+            <ul class="mt-4 space-y-2 text-sm text-gray-700">
+              <li><i class="fas fa-check-circle text-green-500 mr-2"></i> UPS + solar integrado</li>
+              <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Resfriamento adiabático solar</li>
+              <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Redução PUE e custos</li>
+            </ul>
+            <button class="open-modal-orcamento w-full mt-6 bg-white border border-green-600 text-green-700 py-2 rounded-full hover:bg-green-50 transition font-medium">Solicitar orçamento</button>
+          </div>
+          <!-- Card PMEs -->
+          <div class="bg-gray-50 rounded-2xl p-6 shadow-md card-hover border border-gray-100">
+            <div class="bg-yellow-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"><i class="fas fa-building text-yellow-700 text-3xl"></i></div>
+            <h3 class="text-xl font-bold text-center text-gray-800">Pequenas e Médias Empresas</h3>
+            <p class="text-gray-600 text-center mt-2">Comércios, indústrias e escritórios com alta economia e retorno rápido. Gere sua própria energia e valorize seu negócio.</p>
+            <ul class="mt-4 space-y-2 text-sm text-gray-700">
+              <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Payback de 2 a 4 anos</li>
+              <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Créditos de energia excedente</li>
+              <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Instalação com incentivos</li>
+            </ul>
+            <button class="open-modal-orcamento w-full mt-6 bg-white border border-green-600 text-green-700 py-2 rounded-full hover:bg-green-50 transition font-medium">Solicitar orçamento</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BENEFÍCIOS -->
+    <section id="beneficios" class="py-16 bg-green-50">
+      <div class="container mx-auto px-5">
+        <div class="text-center mb-10">
+          <h2 class="text-3xl font-bold text-gray-800">Por que escolher a energia solar?</h2>
+          <p class="text-gray-600 mt-2">Vantagens que vão além da economia</p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="bg-white p-5 rounded-xl shadow text-center"><i class="fas fa-chart-line text-green-600 text-4xl mb-3"></i><h3 class="font-bold text-lg">Economia real</h3><p class="text-gray-600">Redução de 50% a 95% na conta de luz, dependendo do projeto.</p></div>
+          <div class="bg-white p-5 rounded-xl shadow text-center"><i class="fas fa-leaf text-green-600 text-4xl mb-3"></i><h3 class="font-bold text-lg">Sustentabilidade</h3><p class="text-gray-600">Energia limpa, renovável, redução de CO₂ e responsabilidade ambiental.</p></div>
+          <div class="bg-white p-5 rounded-xl shadow text-center"><i class="fas fa-plug text-green-600 text-4xl mb-3"></i><h3 class="font-bold text-lg">Autonomia</h3><p class="text-gray-600">Independência das oscilações tarifárias e apagões com baterias.</p></div>
+          <div class="bg-white p-5 rounded-xl shadow text-center"><i class="fas fa-chart-simple text-green-600 text-4xl mb-3"></i><h3 class="font-bold text-lg">Valorização do imóvel</h3><p class="text-gray-600">Imóveis com sistema solar valorizam até 15% no mercado.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SIMULADOR -->
+    <section id="simulador" class="py-16 bg-white">
+      <div class="container mx-auto px-5 max-w-3xl">
+        <div class="text-center mb-8">
+          <i class="fas fa-calculator text-green-600 text-4xl mb-2"></i>
+          <h2 class="text-3xl font-bold text-gray-800">Simulador de Economia Solar</h2>
+          <p class="text-gray-500">Estime sua economia e payback com base no consumo médio</p>
+        </div>
+        <div class="bg-gray-50 p-6 md:p-8 rounded-2xl shadow-md">
+          <div class="mb-5">
+            <label class="block text-gray-700 font-medium mb-1">Consumo médio mensal (kWh)</label>
+            <input type="number" id="consumoKwh" placeholder="Ex: 500" class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:ring-green-500 focus:border-green-500 outline-none">
+          </div>
+          <div class="mb-5">
+            <label class="block text-gray-700 font-medium mb-1">Tipo de cliente</label>
+            <select id="tipoCliente" class="w-full border border-gray-300 rounded-xl px-4 py-3 bg-white">
+              <option value="rural">Área Rural</option>
+              <option value="datacenter">Data Center</option>
+              <option value="empresa">Pequena/Média Empresa</option>
+            </select>
+          </div>
+          <button id="btnSimular" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 rounded-xl transition flex items-center justify-center gap-2"><i class="fas fa-sun"></i> Simular economia</button>
+          <div id="resultadoSimulacao" class="mt-6 text-center p-4 rounded-xl bg-green-100 text-gray-800 hidden font-medium"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DEPOIMENTOS -->
+    <section id="depoimentos" class="py-16 bg-blue-50">
+      <div class="container mx-auto px-5">
+        <div class="text-center mb-12"><h2 class="text-3xl font-bold text-gray-800">Quem confia na Sol Rural & Tech</h2><p class="text-gray-600">Cases reais de clientes satisfeitos</p></div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="bg-white p-6 rounded-2xl shadow-md italic"><i class="fas fa-quote-left text-green-400 text-2xl mb-2 block"></i><p class="text-gray-700">“Instalamos o sistema na fazenda e hoje economizamos 70% na conta, além de garantir irrigação sem gerador a diesel.”</p><div class="flex items-center gap-3 mt-4"><div class="bg-green-200 rounded-full w-10 h-10 flex items-center justify-center"><i class="fas fa-user text-green-800"></i></div><div><strong class="block">João da Silva</strong><span class="text-sm text-gray-500">Produtor rural - GO</span></div></div></div>
+          <div class="bg-white p-6 rounded-2xl shadow-md italic"><i class="fas fa-quote-left text-green-400 text-2xl mb-2 block"></i><p class="text-gray-700">“Nosso data center reduziu custos de refrigeração em 40% com a integração solar, mantendo alta disponibilidade.”</p><div class="flex items-center gap-3 mt-4"><div class="bg-blue-200 rounded-full w-10 h-10 flex items-center justify-center"><i class="fas fa-server text-blue-800"></i></div><div><strong class="block">Carla Mendes</strong><span class="text-sm text-gray-500">CTO - DataCore</span></div></div></div>
+          <div class="bg-white p-6 rounded-2xl shadow-md italic"><i class="fas fa-quote-left text-green-400 text-2xl mb-2 block"></i><p class="text-gray-700">“Na nossa empresa de móveis, a energia solar pagou em menos de 3 anos e hoje investimos o que economizamos em novos equipamentos.”</p><div class="flex items-center gap-3 mt-4"><div class="bg-yellow-200 rounded-full w-10 h-10 flex items-center justify-center"><i class="fas fa-chart-line text-yellow-800"></i></div><div><strong class="block">Ricardo Alves</strong><span class="text-sm text-gray-500">Móveis Alves - SP</span></div></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section id="contato" class="py-16 bg-white">
+      <div class="container mx-auto px-5 max-w-3xl">
+        <div class="text-center"><h2 class="text-3xl font-bold text-gray-800">Fale com um especialista</h2><p class="text-gray-500 mb-6">Preencha e receba um diagnóstico gratuito para seu negócio</p></div>
+        <form id="contatoForm" class="bg-gray-50 p-6 rounded-2xl shadow-md">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+            <input type="text" id="nome" placeholder="Nome completo*" class="border p-3 rounded-xl w-full" required>
+            <input type="email" id="email" placeholder="E-mail*" class="border p-3 rounded-xl w-full" required>
+          </div>
+          <div class="mb-4"><input type="tel" id="telefone" placeholder="Telefone" class="border p-3 rounded-xl w-full"></div>
+          <div class="mb-4"><textarea id="mensagem" rows="3" placeholder="Conte-nos sobre seu projeto ou dúvida*" class="border p-3 rounded-xl w-full" required></textarea></div>
+          <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 rounded-xl transition"><i class="fas fa-paper-plane mr-2"></i>Enviar mensagem</button>
+          <p id="formFeedback" class="text-sm mt-3 text-center hidden"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-gray-900 text-gray-300 py-10">
+    <div class="container mx-auto px-5 grid grid-cols-1 md:grid-cols-3 gap-6 text-center md:text-left">
+      <div><i class="fas fa-sun text-yellow-400 text-2xl mb-2 inline-block"></i><h3 class="font-bold text-white text-lg">Sol Rural & Tech</h3><p class="text-sm">Energia solar com propósito técnico e sustentável.</p></div>
+      <div><i class="fas fa-phone-alt mr-2"></i> (11) 99999-1234<br><i class="fas fa-envelope mr-2"></i> contato@solruraltech.com.br<br><i class="fas fa-map-marker-alt mr-2"></i> Av. Solar, 1000 - SP</div>
+      <div><i class="fab fa-instagram mr-2"></i> @solruraltech  <i class="fab fa-linkedin ml-3"></i> /company/solrural<br>© 2025 Todos os direitos reservados</div>
+    </div>
+  </footer>
+
+  <!-- MODAL ORÇAMENTO -->
+  <div id="modalOrcamento" class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 transition-all duration-300 invisible opacity-0 modal-transition">
+    <div class="bg-white w-full max-w-md mx-4 rounded-2xl shadow-2xl p-6 relative">
+      <button id="closeModalBtn" class="absolute top-3 right-4 text-gray-400 hover:text-gray-700 text-2xl">&times;</button>
+      <h3 class="text-2xl font-bold text-gray-800 mb-2"><i class="fas fa-file-invoice-dollar text-green-500"></i> Solicitar orçamento</h3>
+      <p class="text-gray-500 mb-4">Preencha seus dados, retornamos em até 24h.</p>
+      <form id="modalForm">
+        <input type="text" id="modalNome" placeholder="Nome completo*" class="w-full border p-3 rounded-xl mb-3" required>
+        <input type="email" id="modalEmail" placeholder="E-mail*" class="w-full border p-3 rounded-xl mb-3" required>
+        <input type="tel" id="modalTelefone" placeholder="Telefone" class="w-full border p-3 rounded-xl mb-3">
+        <select id="modalInteresse" class="w-full border p-3 rounded-xl mb-3">
+          <option value="rural">Área Rural</option>
+          <option value="datacenter">Data Center</option>
+          <option value="empresa">Pequena/Média Empresa</option>
+        </select>
+        <textarea id="modalMsg" rows="2" placeholder="Mensagem adicional" class="w-full border p-3 rounded-xl mb-3"></textarea>
+        <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 rounded-xl">Enviar orçamento</button>
+        <p id="modalFeedback" class="text-xs text-center mt-2 text-green-600 hidden"></p>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // Garantir que links âncora nativos funcionem (fallback)
+    document.querySelectorAll('.nav-link').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const targetId = this.getAttribute('href');
+        if (targetId && targetId.startsWith('#')) {
+          e.preventDefault();
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            targetElement.scrollIntoView({ behavior: 'smooth' });
+          }
+        }
+      });
+    });
+
+    // Modal
+    const modal = document.getElementById('modalOrcamento');
+    const openModalButtons = document.querySelectorAll('#openModalBtnHeader, #openModalBtnMobile, .open-modal-orcamento');
+    const closeModalBtn = document.getElementById('closeModalBtn');
+    
+    function openModal() { 
+      modal.classList.remove('invisible', 'opacity-0'); 
+      modal.classList.add('visible', 'opacity-100'); 
+      document.body.style.overflow = 'hidden'; 
+    }
+    function closeModal() { 
+      modal.classList.add('invisible', 'opacity-0'); 
+      modal.classList.remove('visible', 'opacity-100'); 
+      document.body.style.overflow = ''; 
+    }
+    openModalButtons.forEach(btn => btn.addEventListener('click', openModal));
+    if(closeModalBtn) closeModalBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => { if(e.target === modal) closeModal(); });
+    
+    // Simulador
+    const btnSimular = document.getElementById('btnSimular');
+    const consumoInput = document.getElementById('consumoKwh');
+    const tipoSelect = document.getElementById('tipoCliente');
+    const resultadoDiv = document.getElementById('resultadoSimulacao');
+    
+    function calcularEconomia(consumo, tipo) {
+      if(!consumo || consumo <= 0) return { economiaPercent: null, payback: null };
+      let economiaPercent = 0;
+      let payback = 0;
+      if(tipo === 'rural') { economiaPercent = Math.floor(Math.random() * (70 - 45 + 1) + 45); payback = +(Math.random() * (4 - 2.5) + 2.5).toFixed(1); }
+      else if(tipo === 'datacenter') { economiaPercent = Math.floor(Math.random() * (55 - 30 + 1) + 30); payback = +(Math.random() * (5 - 3) + 3).toFixed(1); }
+      else { economiaPercent = Math.floor(Math.random() * (65 - 40 + 1) + 40); payback = +(Math.random() * (4 - 2) + 2).toFixed(1); }
+      return { economiaPercent, payback };
+    }
+    
+    btnSimular.addEventListener('click', () => {
+      const consumo = parseFloat(consumoInput.value);
+      const tipo = tipoSelect.value;
+      if(isNaN(consumo) || consumo <= 0) {
+        resultadoDiv.classList.remove('hidden');
+        resultadoDiv.innerHTML = '<i class="fas fa-exclamation-triangle text-yellow-600"></i> Por favor, insira um consumo válido (ex: 300 kWh).';
+        resultadoDiv.classList.add('bg-yellow-50', 'text-yellow-800');
+        resultadoDiv.classList.remove('bg-green-100');
+        return;
+      }
+      const { economiaPercent, payback } = calcularEconomia(consumo, tipo);
+      resultadoDiv.classList.remove('hidden', 'bg-yellow-50', 'text-yellow-800');
+      resultadoDiv.classList.add('bg-green-100', 'text-gray-800');
+      resultadoDiv.innerHTML = `<i class="fas fa-chart-line text-green-700 mr-1"></i> Sua economia estimada é de ${economiaPercent}% e payback de ${payback} anos! Baseado no perfil ${tipoSelect.options[tipoSelect.selectedIndex].text}.`;
+    });
+    
+    // Formulário de contato
+    const contatoForm = document.getElementById('contatoForm');
+    const formFeedback = document.getElementById('formFeedback');
+    contatoForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const nome = document.getElementById('nome').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const mensagem = document.getElementById('mensagem').value.trim();
+      if(!nome || !email || !mensagem) {
+        formFeedback.classList.remove('hidden');
+        formFeedback.classList.add('text-red-600');
+        formFeedback.innerText = 'Por favor, preencha nome, e-mail e mensagem.';
+        return;
+      }
+      if(!email.includes('@') || !email.includes('.')) {
+        formFeedback.classList.remove('hidden');
+        formFeedback.classList.add('text-red-600');
+        formFeedback.innerText = 'E-mail inválido.';
+        return;
+      }
+      formFeedback.classList.remove('hidden', 'text-red-600');
+      formFeedback.classList.add('text-green-600');
+      formFeedback.innerText = 'Mensagem enviada! Em breve um consultor entrará em contato.';
+      contatoForm.reset();
+      setTimeout(() => { formFeedback.classList.add('hidden'); }, 4000);
+    });
+    
+    // Modal form
+    const modalForm = document.getElementById('modalForm');
+    const modalFeedback = document.getElementById('modalFeedback');
+    modalForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const nomeModal = document.getElementById('modalNome').value.trim();
+      const emailModal = document.getElementById('modalEmail').value.trim();
+      if(!nomeModal || !emailModal) {
+        modalFeedback.classList.remove('hidden');
+        modalFeedback.innerText = 'Preencha nome e e-mail.';
+        modalFeedback.classList.add('text-red-600');
+        return;
+      }
+      if(!emailModal.includes('@')) {
+        modalFeedback.classList.remove('hidden');
+        modalFeedback.innerText = 'E-mail inválido.';
+        modalFeedback.classList.add('text-red-600');
+        return;
+      }
+      modalFeedback.classList.remove('hidden', 'text-red-600');
+      modalFeedback.classList.add('text-green-600');
+      modalFeedback.innerText = 'Solicitação enviada! Entraremos em contato.';
+      modalForm.reset();
+      setTimeout(() => { closeModal(); modalFeedback.classList.add('hidden'); }, 1500);
+    });
+    
+    // Mobile menu toggle
+    const mobileBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    if(mobileBtn) {
+      mobileBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+    }
+    const mobileLinks = mobileMenu.querySelectorAll('a');
+    mobileLinks.forEach(link => link.addEventListener('click', () => { mobileMenu.classList.add('hidden'); }));
+  </script>
+</body>
+</html>
