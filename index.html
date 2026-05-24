@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   
-  <!-- Google Analytics GA4 (substitua G-78WP2T1D18 pelo seu ID) -->
+  <!-- Google Analytics GA4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-78WP2T1D18"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -13,13 +13,10 @@
     gtag('config', 'G-78WP2T1D18');
   </script>
   
-  <!-- Pré-conexão com CDNs (acelera o carregamento) -->
+  <!-- Pré-conexão com CDNs -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-  
-  <!-- Pré-carregamento de fontes críticas -->
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" as="style">
   
   <meta name="description" content="WA Solar & Systems - Energia solar para áreas rurais, residências, data centers e pequenas/médias empresas. Economia, sustentabilidade e independência energética.">
   <meta name="keywords" content="energia solar, energia solar residencial, placa solar para casa, áreas rurais, data centers, pequenas empresas, economia solar">
@@ -27,74 +24,20 @@
   <meta name="robots" content="index, follow">
   <title>WA Solar & Systems | Energia Solar para Residências, Empresas, Data Centers e Áreas Rurais</title>
   
-  <!-- CSS CRÍTICO INLINE com font-display otimizado -->
+  <!-- CSS CRÍTICO INLINE - LAYOUT SUAVE -->
   <style>
-    /* ===== FONTES OTIMIZADAS COM FONT-DISPLAY: SWAP ===== */
-    /* Carrega fonte personalizada sem bloquear renderização */
-    @font-face {
-      font-family: 'Inter';
-      font-style: normal;
-      font-weight: 400;
-      font-display: swap;
-      src: url('https://fonts.gstatic.com/s/inter/v12/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2JL7W0Q5n-wU.woff2') format('woff2');
-    }
-    
-    @font-face {
-      font-family: 'Inter';
-      font-style: normal;
-      font-weight: 500;
-      font-display: swap;
-      src: url('https://fonts.gstatic.com/s/inter/v12/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2JL7W0Q5n-wU.woff2') format('woff2');
-    }
-    
-    @font-face {
-      font-family: 'Inter';
-      font-style: normal;
-      font-weight: 600;
-      font-display: swap;
-      src: url('https://fonts.gstatic.com/s/inter/v12/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2JL7W0Q5n-wU.woff2') format('woff2');
-    }
-    
-    @font-face {
-      font-family: 'Inter';
-      font-style: normal;
-      font-weight: 700;
-      font-display: swap;
-      src: url('https://fonts.gstatic.com/s/inter/v12/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2JL7W0Q5n-wU.woff2') format('woff2');
-    }
-    
-    @font-face {
-      font-family: 'Inter';
-      font-style: normal;
-      font-weight: 800;
-      font-display: swap;
-      src: url('https://fonts.gstatic.com/s/inter/v12/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2JL7W0Q5n-wU.woff2') format('woff2');
-    }
-    
-    /* Reset e estilos críticos com fallback de fontes nativas */
+    /* Reset e estilos críticos */
     *, *::before, *::after {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
     
-    /* 
-      Sistema de fontes em cascata:
-      - Primeiro tenta carregar a fonte personalizada (Inter)
-      - Se falhar ou estiver carregando, usa fallbacks nativos
-      - Fallbacks garantem que o texto NUNCA fique invisível
-    */
     body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
       background-color: #f9fafb;
       color: #1f2937;
       line-height: 1.5;
-      font-display: swap; /* Propriedade adicional para garantir */
-    }
-    
-    /* Garantia de que textos nunca ficam invisíveis */
-    h1, h2, h3, h4, p, span, a, button, input, textarea, label {
-      font-display: swap;
     }
     
     /* Container e utilitários básicos */
@@ -148,7 +91,6 @@
     @media (min-width: 768px) { .md\:text-left { text-align: left; } }
     @media (min-width: 768px) { .md\:flex-row { flex-direction: row; } }
     @media (min-width: 768px) { .md\:hidden { display: none; } }
-    @media (min-width: 768px) { .md\:grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
     
     /* Tipografia */
     .text-xs { font-size: 0.75rem; line-height: 1rem; }
@@ -169,7 +111,7 @@
     .tracking-wide { letter-spacing: 0.025em; }
     .leading-tight { line-height: 1.25; }
     
-    /* Cores */
+    /* Cores suaves */
     .bg-white { background-color: #ffffff; }
     .bg-gray-50 { background-color: #f9fafb; }
     .bg-gray-900 { background-color: #111827; }
@@ -212,7 +154,7 @@
     .border-gray-300 { border-color: #d1d5db; }
     .border-green-600 { border-color: #16a34a; }
     
-    /* Sombras */
+    /* Sombras suaves */
     .shadow { box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1); }
     .shadow-md { box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1); }
     .shadow-lg { box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1); }
@@ -224,86 +166,108 @@
     .rounded-xl { border-radius: 0.75rem; }
     .rounded-2xl { border-radius: 1rem; }
     
-    /* Transições */
+    /* Transições suaves */
     .transition { transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 150ms; }
     
-    /* Botões e interações */
-    .cursor-pointer { cursor: pointer; }
-    .hover\:bg-green-50:hover { background-color: #f0fdf4; }
-    .hover\:bg-green-700:hover { background-color: #15803d; }
+    /* Botões suaves */
+    .btn-primary {
+      background-color: #16a34a;
+      color: white;
+      font-weight: 600;
+      padding: 12px 24px;
+      border-radius: 9999px;
+      transition: all 0.2s ease;
+      cursor: pointer;
+      border: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .btn-primary:hover { background-color: #15803d; transform: scale(1.02); }
     
-    /* Posicionamento */
-    .fixed { position: fixed; }
-    .absolute { position: absolute; }
-    .relative { position: relative; }
-    .sticky { position: sticky; }
-    .top-0 { top: 0; }
-    .top-3 { top: 0.75rem; }
-    .right-4 { right: 1rem; }
-    .inset-0 { top: 0; right: 0; bottom: 0; left: 0; }
-    .z-30 { z-index: 30; }
-    .z-40 { z-index: 40; }
-    .z-50 { z-index: 50; }
+    .btn-outline {
+      background: transparent;
+      border: 2px solid #16a34a;
+      color: #16a34a;
+      font-weight: 600;
+      padding: 10px 22px;
+      border-radius: 9999px;
+      transition: all 0.2s ease;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .btn-outline:hover { background-color: #f0fdf4; transform: scale(1.02); }
     
-    /* Utilitários */
-    .w-full { width: 100%; }
-    .max-w-3xl { max-width: 48rem; }
-    .max-w-md { max-width: 28rem; }
-    .max-w-full { max-width: 100%; }
-    .h-auto { height: auto; }
-    .h-10 { height: 2.5rem; }
-    .h-16 { height: 4rem; }
-    .w-10 { width: 2.5rem; }
-    .w-16 { width: 4rem; }
-    .space-x-2 > :not([hidden]) ~ :not([hidden]) { margin-left: 0.5rem; }
-    .space-x-8 > :not([hidden]) ~ :not([hidden]) { margin-left: 2rem; }
-    .space-y-2 > :not([hidden]) ~ :not([hidden]) { margin-top: 0.5rem; }
-    .space-y-3 > :not([hidden]) ~ :not([hidden]) { margin-top: 0.75rem; }
-    .overflow-hidden { overflow: hidden; }
+    /* Cards suaves */
+    .card {
+      background: #f9fafb;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      transition: all 0.2s ease;
+      border: 1px solid #f3f4f6;
+      height: 100%;
+    }
+    .card:hover { transform: translateY(-4px); box-shadow: 0 20px 25px -12px rgba(0, 0, 0, 0.1); }
+    
+    /* Gradiente suave */
+    .bg-gradient-to-r { background-image: linear-gradient(to right, var(--tw-gradient-stops)); }
+    .from-green-50 { --tw-gradient-from: #f0fdf4; --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, transparent); }
+    .to-blue-50 { --tw-gradient-to: #eff6ff; }
+    
+    /* Formulários */
+    .form-input {
+      background: white;
+      border: 1px solid #d1d5db;
+      border-radius: 0.75rem;
+      padding: 0.75rem 1rem;
+      width: 100%;
+      transition: all 0.2s ease;
+    }
+    .form-input:focus { outline: none; border-color: #16a34a; box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.1); }
+    
+    /* WhatsApp float */
+    .whatsapp-float {
+      position: fixed; bottom: 20px; right: 20px; background-color: #25D366;
+      color: white; border-radius: 50%; width: 60px; height: 60px;
+      display: flex; align-items: center; justify-content: center; font-size: 30px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2); z-index: 40; transition: transform 0.2s;
+      text-decoration: none;
+    }
+    .whatsapp-float:hover { transform: scale(1.1); color: white; }
+    
+    .social-link { transition: opacity 0.2s; text-decoration: none; }
+    .social-link:hover { opacity: 0.8; }
+    
+    /* Modal suave */
+    .modal {
+      position: fixed; inset: 0; background: rgba(0,0,0,0.5);
+      display: flex; align-items: center; justify-content: center;
+      z-index: 100; transition: all 0.25s ease;
+    }
+    .modal-content {
+      background: white; max-width: 500px; width: 90%;
+      border-radius: 1rem; padding: 1.5rem; position: relative;
+    }
+    .modal-close {
+      position: absolute; top: 1rem; right: 1rem;
+      font-size: 1.5rem; cursor: pointer; color: #6b7280;
+    }
+    .modal-close:hover { color: #16a34a; }
+    
     .invisible { visibility: hidden; }
     .opacity-0 { opacity: 0; }
     .opacity-100 { opacity: 1; }
     .visible { visibility: visible; }
     
-    /* Gradientes */
-    .bg-gradient-to-r { background-image: linear-gradient(to right, var(--tw-gradient-stops)); }
-    .from-green-50 { --tw-gradient-from: #f0fdf4; --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, transparent); }
-    .to-blue-50 { --tw-gradient-to: #eff6ff; }
-    
-    /* Estilos específicos do site */
-    .card-hover { transition: transform 0.2s ease, box-shadow 0.2s ease; }
-    .card-hover:hover { transform: translateY(-5px); box-shadow: 0 20px 25px -12px rgba(0, 0, 0, 0.15); }
-    .modal-transition { transition: opacity 0.25s ease, visibility 0.25s ease; }
-    .whatsapp-float {
-      position: fixed; bottom: 20px; right: 20px; background-color: #25D366;
-      color: white; border-radius: 50%; width: 60px; height: 60px;
-      display: flex; align-items: center; justify-content: center; font-size: 30px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 40; transition: transform 0.2s;
-      text-decoration: none;
-    }
-    .whatsapp-float:hover { transform: scale(1.1); color: white; }
-    .social-link { transition: opacity 0.2s; text-decoration: none; }
-    .social-link:hover { opacity: 0.8; }
-    
-    /* Ajustes de scroll para header fixo */
+    /* Scroll suave */
     html { scroll-behavior: smooth; }
     section { scroll-margin-top: 80px; }
-    
-    /* Botões e inputs */
-    button, .btn { cursor: pointer; border: none; background: none; }
-    input, select, textarea { font-family: inherit; font-size: inherit; outline: none; }
-    input:focus, select:focus, textarea:focus { border-color: #22c55e; }
   </style>
   
-  <!-- CSS não crítico carregado de forma preguiçosa (não bloqueia) -->
   <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"></noscript>
-  
-  <!-- Carregamento otimizado da fonte Inter com font-display swap -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
-  <noscript>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
-  </noscript>
 </head>
 <body class="bg-gray-50">
 
@@ -321,17 +285,16 @@
         <a href="#depoimentos" class="nav-link hover:text-green-600 transition">Depoimentos</a>
         <a href="#contato" class="nav-link hover:text-green-600 transition">Contato</a>
       </nav>
-      <button id="openModalBtnHeader" class="bg-green-600 hover:bg-green-700 text-white px-5 py-2 rounded-full shadow-md transition flex items-center gap-2"><i class="fab fa-whatsapp"></i> Orçamento via WhatsApp</button>
-      <button id="mobileMenuBtn" class="md:hidden text-gray-600 text-2xl focus:outline-none" aria-label="Menu"><i class="fas fa-bars"></i></button>
+      <button id="openModalBtnHeader" class="btn-primary"><i class="fab fa-whatsapp"></i> Orçamento</button>
+      <button id="mobileMenuBtn" class="md:hidden text-gray-600 text-2xl" aria-label="Menu">☰</button>
     </div>
-    <!-- Mobile menu -->
     <div id="mobileMenu" class="hidden md:hidden bg-white border-t py-4 px-5 flex flex-col space-y-3 shadow-inner">
       <a href="#solucoes" class="nav-link-mobile hover:text-green-600">Soluções</a>
       <a href="#beneficios" class="nav-link-mobile hover:text-green-600">Benefícios</a>
       <a href="#simulador" class="nav-link-mobile hover:text-green-600">Simulador</a>
       <a href="#depoimentos" class="nav-link-mobile hover:text-green-600">Depoimentos</a>
       <a href="#contato" class="nav-link-mobile hover:text-green-600">Contato</a>
-      <button id="openModalBtnMobile" class="bg-green-600 text-white px-4 py-2 rounded-full w-full"><i class="fab fa-whatsapp mr-1"></i> Orçamento via WhatsApp</button>
+      <button id="openModalBtnMobile" class="btn-primary w-full"><i class="fab fa-whatsapp mr-1"></i> Orçamento</button>
     </div>
   </header>
 
@@ -343,17 +306,17 @@
           <h1 class="text-4xl md:text-5xl font-extrabold text-gray-800 leading-tight">Energia solar <span class="text-green-600">inteligente</span> para você</h1>
           <p class="text-gray-600 text-lg mt-4">Soluções sob medida para residências, áreas rurais, data centers e pequenas/médias empresas. Reduza até 70% na conta de luz com sustentabilidade e alta performance.</p>
           <div class="mt-8 flex flex-wrap gap-4 justify-center md:justify-start">
-            <a href="#simulador" class="bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-3 rounded-full shadow-lg transition flex items-center gap-2 inline-block"><i class="fas fa-calculator"></i> Simular economia</a>
-            <a href="#solucoes" class="border-2 border-green-600 text-green-700 hover:bg-green-50 px-6 py-3 rounded-full font-semibold transition">Conhecer soluções</a>
+            <a href="#simulador" class="btn-primary"><i class="fas fa-calculator"></i> Simular economia</a>
+            <a href="#solucoes" class="btn-outline">Conhecer soluções</a>
           </div>
         </div>
         <div class="flex-1 flex justify-center">
-          <img src="https://placehold.co/500x400/e2f0e6/2c6e2c?text=Energia+Solar" alt="Painéis solares WA Solar Systems" class="rounded-2xl shadow-2xl max-w-full h-auto" loading="eager" width="500" height="400">
+          <img src="https://placehold.co/500x400/e2f0e6/2c6e2c?text=Energia+Solar" alt="Painéis solares WA Solar & Systems" class="rounded-2xl shadow-2xl max-w-full h-auto" loading="eager" width="500" height="400">
         </div>
       </div>
     </section>
 
-    <!-- SOLUÇÕES (4 cards: Residencial + Rural + Data Centers + PMEs) -->
+    <!-- SOLUÇÕES -->
     <section id="solucoes" class="py-16 bg-white">
       <div class="container mx-auto px-5">
         <div class="text-center max-w-2xl mx-auto mb-12">
@@ -363,57 +326,32 @@
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           
-          <!-- Card Residencial -->
-          <div class="bg-gray-50 rounded-2xl p-6 shadow-md card-hover border border-gray-100">
+          <div class="card">
             <div class="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"><i class="fas fa-home text-purple-700 text-3xl"></i></div>
             <h3 class="text-xl font-bold text-center text-gray-800">Residencial</h3>
-            <p class="text-gray-600 text-center mt-2">Transforme sua casa em uma usina de energia limpa. Reduza sua conta de luz em até 95% e valorize seu imóvel com tecnologia sustentável.</p>
-            <ul class="mt-4 space-y-2 text-sm text-gray-700">
-              <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Economia de 50% a 95% na conta</li>
-              <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Payback de 3 a 5 anos</li>
-              <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Sistemas on-grid e híbridos</li>
-              <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Valorização do imóvel em até 15%</li>
-            </ul>
-            <button class="open-modal-orcamento w-full mt-6 bg-white border border-green-600 text-green-700 py-2 rounded-full hover:bg-green-50 transition font-medium">Solicitar orçamento</button>
+            <p class="text-gray-600 text-center mt-2">Economia de até 95% na conta de luz. Payback de 3 a 5 anos. Valorize seu imóvel.</p>
+            <button class="open-modal-orcamento w-full mt-6 btn-outline">Solicitar orçamento</button>
           </div>
           
-          <!-- Card Rural -->
-          <div class="bg-gray-50 rounded-2xl p-6 shadow-md card-hover border border-gray-100">
+          <div class="card">
             <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"><i class="fas fa-tractor text-green-700 text-3xl"></i></div>
             <h3 class="text-xl font-bold text-center text-gray-800">Áreas Rurais</h3>
-            <p class="text-gray-600 text-center mt-2">Irrigação, cercas elétricas, ordenha mecânica e bombeamento solar. Energia confiável off-grid ou híbrida para reduzir custos no campo.</p>
-            <ul class="mt-4 space-y-2 text-sm text-gray-700">
-              <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Autonomia em regiões remotas</li>
-              <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Sistemas de bombeamento solar</li>
-              <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Linha de crédito rural</li>
-            </ul>
-            <button class="open-modal-orcamento w-full mt-6 bg-white border border-green-600 text-green-700 py-2 rounded-full hover:bg-green-50 transition font-medium">Solicitar orçamento</button>
+            <p class="text-gray-600 text-center mt-2">Autonomia off-grid, bombeamento solar e crédito rural disponível.</p>
+            <button class="open-modal-orcamento w-full mt-6 btn-outline">Solicitar orçamento</button>
           </div>
           
-          <!-- Card Data Centers -->
-          <div class="bg-gray-50 rounded-2xl p-6 shadow-md card-hover border border-gray-100">
+          <div class="card">
             <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"><i class="fas fa-database text-blue-700 text-3xl"></i></div>
             <h3 class="text-xl font-bold text-center text-gray-800">Data Centers</h3>
-            <p class="text-gray-600 text-center mt-2">Eficiência energética, redução da pegada de carbono e refrigeração otimizada com geração fotovoltaica para ambientes críticos 24/7.</p>
-            <ul class="mt-4 space-y-2 text-sm text-gray-700">
-              <li><i class="fas fa-check-circle text-green-500 mr-2"></i> UPS + solar integrado</li>
-              <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Resfriamento adiabático solar</li>
-              <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Redução PUE e custos</li>
-            </ul>
-            <button class="open-modal-orcamento w-full mt-6 bg-white border border-green-600 text-green-700 py-2 rounded-full hover:bg-green-50 transition font-medium">Solicitar orçamento</button>
+            <p class="text-gray-600 text-center mt-2">Redução de até 55% com refrigeração otimizada e UPS integrado.</p>
+            <button class="open-modal-orcamento w-full mt-6 btn-outline">Solicitar orçamento</button>
           </div>
           
-          <!-- Card PMEs -->
-          <div class="bg-gray-50 rounded-2xl p-6 shadow-md card-hover border border-gray-100">
+          <div class="card">
             <div class="bg-yellow-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"><i class="fas fa-building text-yellow-700 text-3xl"></i></div>
             <h3 class="text-xl font-bold text-center text-gray-800">Pequenas e Médias Empresas</h3>
-            <p class="text-gray-600 text-center mt-2">Comércios, indústrias e escritórios com alta economia e retorno rápido. Gere sua própria energia e valorize seu negócio.</p>
-            <ul class="mt-4 space-y-2 text-sm text-gray-700">
-              <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Payback de 2 a 4 anos</li>
-              <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Créditos de energia excedente</li>
-              <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Instalação com incentivos</li>
-            </ul>
-            <button class="open-modal-orcamento w-full mt-6 bg-white border border-green-600 text-green-700 py-2 rounded-full hover:bg-green-50 transition font-medium">Solicitar orçamento</button>
+            <p class="text-gray-600 text-center mt-2">Payback de 2 a 4 anos, créditos de energia excedente.</p>
+            <button class="open-modal-orcamento w-full mt-6 btn-outline">Solicitar orçamento</button>
           </div>
         </div>
       </div>
@@ -427,10 +365,10 @@
           <p class="text-gray-600 mt-2">Vantagens que vão além da economia</p>
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div class="bg-white p-5 rounded-xl shadow text-center"><i class="fas fa-chart-line text-green-600 text-4xl mb-3"></i><h3 class="font-bold text-lg">Economia real</h3><p class="text-gray-600">Redução de 50% a 95% na conta de luz, dependendo do projeto.</p></div>
-          <div class="bg-white p-5 rounded-xl shadow text-center"><i class="fas fa-leaf text-green-600 text-4xl mb-3"></i><h3 class="font-bold text-lg">Sustentabilidade</h3><p class="text-gray-600">Energia limpa, renovável, redução de CO₂ e responsabilidade ambiental.</p></div>
-          <div class="bg-white p-5 rounded-xl shadow text-center"><i class="fas fa-plug text-green-600 text-4xl mb-3"></i><h3 class="font-bold text-lg">Autonomia</h3><p class="text-gray-600">Independência das oscilações tarifárias e apagões com baterias.</p></div>
-          <div class="bg-white p-5 rounded-xl shadow text-center"><i class="fas fa-chart-simple text-green-600 text-4xl mb-3"></i><h3 class="font-bold text-lg">Valorização do imóvel</h3><p class="text-gray-600">Imóveis com sistema solar valorizam até 15% no mercado.</p></div>
+          <div class="bg-white p-5 rounded-xl shadow text-center"><i class="fas fa-chart-line text-green-600 text-4xl mb-3"></i><h3 class="font-bold text-lg">Economia real</h3><p class="text-gray-600">Redução de 50% a 95% na conta</p></div>
+          <div class="bg-white p-5 rounded-xl shadow text-center"><i class="fas fa-leaf text-green-600 text-4xl mb-3"></i><h3 class="font-bold text-lg">Sustentabilidade</h3><p class="text-gray-600">Energia limpa e renovável</p></div>
+          <div class="bg-white p-5 rounded-xl shadow text-center"><i class="fas fa-plug text-green-600 text-4xl mb-3"></i><h3 class="font-bold text-lg">Autonomia</h3><p class="text-gray-600">Independência da rede elétrica</p></div>
+          <div class="bg-white p-5 rounded-xl shadow text-center"><i class="fas fa-chart-simple text-green-600 text-4xl mb-3"></i><h3 class="font-bold text-lg">Valorização</h3><p class="text-gray-600">Imóvel valoriza até 15%</p></div>
         </div>
       </div>
     </section>
@@ -446,18 +384,18 @@
         <div class="bg-gray-50 p-6 md:p-8 rounded-2xl shadow-md">
           <div class="mb-5">
             <label class="block text-gray-700 font-medium mb-1">Consumo médio mensal (kWh)</label>
-            <input type="number" id="consumoKwh" placeholder="Ex: 500" class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:ring-green-500 focus:border-green-500 outline-none">
+            <input type="number" id="consumoKwh" placeholder="Ex: 500" class="form-input">
           </div>
           <div class="mb-5">
             <label class="block text-gray-700 font-medium mb-1">Tipo de cliente</label>
-            <select id="tipoCliente" class="w-full border border-gray-300 rounded-xl px-4 py-3 bg-white">
+            <select id="tipoCliente" class="form-input">
               <option value="residencial">Residencial</option>
               <option value="rural">Área Rural</option>
               <option value="datacenter">Data Center</option>
               <option value="empresa">Pequena/Média Empresa</option>
             </select>
           </div>
-          <button id="btnSimular" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 rounded-xl transition flex items-center justify-center gap-2"><i class="fas fa-sun"></i> Simular economia</button>
+          <button id="btnSimular" class="btn-primary w-full justify-center"><i class="fas fa-sun"></i> Simular economia</button>
           <div id="resultadoSimulacao" class="mt-6 text-center p-4 rounded-xl bg-green-100 text-gray-800 hidden font-medium"></div>
         </div>
       </div>
@@ -482,254 +420,166 @@
         <div class="text-center"><h2 class="text-3xl font-bold text-gray-800">Fale com um especialista</h2><p class="text-gray-500 mb-6">Preencha e envie diretamente pelo WhatsApp</p></div>
         <form id="contatoForm" class="bg-gray-50 p-6 rounded-2xl shadow-md">
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-            <input type="text" id="nome" placeholder="Nome completo*" class="border border-gray-300 p-3 rounded-xl w-full" required>
-            <input type="email" id="email" placeholder="E-mail*" class="border border-gray-300 p-3 rounded-xl w-full" required>
+            <input type="text" id="nome" placeholder="Nome completo*" class="form-input" required>
+            <input type="email" id="email" placeholder="E-mail*" class="form-input" required>
           </div>
-          <div class="mb-4"><input type="tel" id="telefone" placeholder="Telefone com DDD*" class="border border-gray-300 p-3 rounded-xl w-full" required></div>
-          <div class="mb-4"><textarea id="mensagem" rows="3" placeholder="Conte-nos sobre seu projeto ou dúvida*" class="border border-gray-300 p-3 rounded-xl w-full" required></textarea></div>
-          <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 rounded-xl transition flex items-center justify-center gap-2"><i class="fab fa-whatsapp text-xl"></i> Enviar via WhatsApp</button>
+          <div class="mb-4"><input type="tel" id="telefone" placeholder="Telefone com DDD*" class="form-input" required></div>
+          <div class="mb-4"><textarea id="mensagem" rows="3" placeholder="Conte-nos sobre seu projeto ou dúvida*" class="form-input" required></textarea></div>
+          <button type="submit" class="btn-primary w-full justify-center"><i class="fab fa-whatsapp text-xl"></i> Enviar via WhatsApp</button>
           <p id="formFeedback" class="text-sm mt-3 text-center hidden"></p>
         </form>
       </div>
     </section>
   </main>
 
-  <!-- RODAPÉ COM LINKS PARA INSTAGRAM E LINKEDIN -->
+  <!-- RODAPÉ -->
   <footer class="bg-gray-900 text-gray-300 py-10">
     <div class="container mx-auto px-5 grid grid-cols-1 md:grid-cols-3 gap-6 text-center md:text-left">
-      <div>
-        <i class="fas fa-sun text-yellow-400 text-2xl mb-2 inline-block"></i>
-        <h3 class="font-bold text-white text-lg">WA Solar & Systems</h3>
-        <p class="text-sm">Energia solar com propósito técnico e sustentável.</p>
-      </div>
-      <div>
-        <p><i class="fab fa-whatsapp text-green-400 mr-2"></i> (11) 98171-3508</p>
-        <p class="mt-2"><i class="fas fa-envelope mr-2"></i> contato@wasolarsystems.com.br</p>
-        <p class="mt-2"><i class="fas fa-map-marker-alt mr-2"></i> Av. Solar, 1000 - São Paulo, SP</p>
-      </div>
-      <div class="flex flex-col items-center md:items-end gap-2">
-        <div class="flex gap-4">
-          <a href="https://www.instagram.com/wasolarsystems" target="_blank" rel="noopener noreferrer" class="social-link text-gray-300 hover:text-pink-400 transition text-2xl" aria-label="Instagram">
-            <i class="fab fa-instagram"></i>
-          </a>
-          <a href="https://www.linkedin.com/company/wasolarsystems" target="_blank" rel="noopener noreferrer" class="social-link text-gray-300 hover:text-blue-400 transition text-2xl" aria-label="LinkedIn">
-            <i class="fab fa-linkedin"></i>
-          </a>
-          <a href="https://wa.me/5511981713508?text=Olá!%20Gostaria%20de%20mais%20informações%20sobre%20energia%20solar." target="_blank" rel="noopener noreferrer" class="social-link text-gray-300 hover:text-green-400 transition text-2xl" aria-label="WhatsApp">
-            <i class="fab fa-whatsapp"></i>
-          </a>
-        </div>
-        <p class="text-xs text-gray-500 mt-2">© 2025 WA Solar & Systems<br>Todos os direitos reservados</p>
-      </div>
+      <div><i class="fas fa-sun text-yellow-400 text-2xl mb-2 inline-block"></i><h3 class="font-bold text-white text-lg">WA Solar & Systems</h3><p class="text-sm">Energia solar com propósito técnico e sustentável.</p></div>
+      <div><p><i class="fab fa-whatsapp text-green-400 mr-2"></i> (11) 98171-3508</p><p class="mt-2"><i class="fas fa-envelope mr-2"></i> contato@wasolarsystems.com.br</p><p class="mt-2"><i class="fas fa-map-marker-alt mr-2"></i> Av. Solar, 1000 - São Paulo, SP</p></div>
+      <div class="flex flex-col items-center md:items-end gap-2"><div class="flex gap-4"><a href="#" class="social-link text-gray-300 hover:text-pink-400 transition text-2xl"><i class="fab fa-instagram"></i></a><a href="#" class="social-link text-gray-300 hover:text-blue-400 transition text-2xl"><i class="fab fa-linkedin"></i></a><a href="#" class="social-link text-gray-300 hover:text-green-400 transition text-2xl"><i class="fab fa-whatsapp"></i></a></div><p class="text-xs text-gray-500 mt-2">© 2025 WA Solar & Systems<br>Todos os direitos reservados</p></div>
     </div>
   </footer>
 
-  <!-- Botão WhatsApp flutuante -->
-  <a href="https://wa.me/5511981713508?text=Olá!%20Gostaria%20de%20mais%20informações%20sobre%20energia%20solar." target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Fale conosco pelo WhatsApp">
-    <i class="fab fa-whatsapp"></i>
-  </a>
+  <!-- WhatsApp flutuante -->
+  <a href="https://wa.me/5511981713508?text=Olá!%20Gostaria%20de%20mais%20informações%20sobre%20energia%20solar." target="_blank" class="whatsapp-float"><i class="fab fa-whatsapp"></i></a>
 
-  <!-- MODAL ORÇAMENTO -->
-  <div id="modalOrcamento" class="fixed inset-0 bg-black/60 flex items-center justify-center z-50 transition-all duration-300 invisible opacity-0 modal-transition">
-    <div class="bg-white w-full max-w-md mx-4 rounded-2xl shadow-2xl p-6 relative">
-      <button id="closeModalBtn" class="absolute top-3 right-4 text-gray-400 hover:text-gray-700 text-2xl">&times;</button>
-      <h3 class="text-2xl font-bold text-gray-800 mb-2"><i class="fab fa-whatsapp text-green-500"></i> Solicitar orçamento via WhatsApp</h3>
+  <!-- MODAL -->
+  <div id="modalOrcamento" class="modal invisible opacity-0">
+    <div class="modal-content">
+      <span id="closeModalBtn" class="modal-close">&times;</span>
+      <h3 class="text-2xl font-bold text-gray-800 mb-2"><i class="fab fa-whatsapp text-green-500"></i> Solicitar orçamento</h3>
       <p class="text-gray-500 mb-4">Preencha e enviaremos seu orçamento pelo WhatsApp.</p>
       <form id="modalForm">
-        <input type="text" id="modalNome" placeholder="Nome completo*" class="w-full border border-gray-300 p-3 rounded-xl mb-3" required>
-        <input type="email" id="modalEmail" placeholder="E-mail*" class="w-full border border-gray-300 p-3 rounded-xl mb-3" required>
-        <input type="tel" id="modalTelefone" placeholder="Telefone com DDD*" class="w-full border border-gray-300 p-3 rounded-xl mb-3" required>
-        <select id="modalInteresse" class="w-full border border-gray-300 p-3 rounded-xl mb-3">
-          <option value="residencial">Residencial</option>
-          <option value="rural">Área Rural</option>
-          <option value="datacenter">Data Center</option>
-          <option value="empresa">Pequena/Média Empresa</option>
+        <input type="text" id="modalNome" placeholder="Nome completo*" class="form-input mb-3" required>
+        <input type="email" id="modalEmail" placeholder="E-mail*" class="form-input mb-3" required>
+        <input type="tel" id="modalTelefone" placeholder="Telefone com DDD*" class="form-input mb-3" required>
+        <select id="modalInteresse" class="form-input mb-3">
+          <option value="Residencial">Residencial</option>
+          <option value="Área Rural">Área Rural</option>
+          <option value="Data Center">Data Center</option>
+          <option value="PME">Pequena/Média Empresa</option>
         </select>
-        <textarea id="modalMsg" rows="2" placeholder="Mensagem adicional" class="w-full border border-gray-300 p-3 rounded-xl mb-3"></textarea>
-        <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 rounded-xl flex items-center justify-center gap-2"><i class="fab fa-whatsapp text-xl"></i> Enviar orçamento via WhatsApp</button>
+        <textarea id="modalMsg" rows="2" placeholder="Mensagem adicional" class="form-input mb-3"></textarea>
+        <button type="submit" class="btn-primary w-full justify-center"><i class="fab fa-whatsapp text-xl"></i> Enviar orçamento</button>
         <p id="modalFeedback" class="text-xs text-center mt-2 text-green-600 hidden"></p>
       </form>
     </div>
   </div>
 
   <script>
-    // Número do WhatsApp
     const WHATSAPP_NUMBER = '5511981713508';
-    
     function sendToWhatsApp(nome, email, telefone, mensagem, interesse = null) {
       let texto = `*NOVO CONTATO - WA SOLAR & SYSTEMS*%0A%0A`;
       texto += `*Nome:* ${nome}%0A`;
       texto += `*E-mail:* ${email}%0A`;
       texto += `*Telefone:* ${telefone}%0A`;
-      if (interesse) {
-        texto += `*Interesse:* ${interesse}%0A`;
-      }
+      if (interesse) texto += `*Interesse:* ${interesse}%0A`;
       texto += `*Mensagem:* ${mensagem}%0A%0A`;
       texto += `Enviado pelo site WA Solar & Systems`;
-      
-      const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${texto}`;
-      window.open(url, '_blank');
+      window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${texto}`, '_blank');
     }
     
-    // Links âncora - versão desktop
-    document.querySelectorAll('.nav-link').forEach(anchor => {
+    // Links âncora
+    document.querySelectorAll('.nav-link, .nav-link-mobile').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
         e.preventDefault();
         const targetId = this.getAttribute('href');
         if (targetId && targetId.startsWith('#')) {
-          const targetElement = document.querySelector(targetId);
-          if (targetElement) {
-            targetElement.scrollIntoView({ behavior: 'smooth' });
-          }
-        }
-      });
-    });
-    
-    // Links âncora - versão mobile
-    document.querySelectorAll('.nav-link-mobile').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href');
-        if (targetId && targetId.startsWith('#')) {
-          const targetElement = document.querySelector(targetId);
-          if (targetElement) {
-            targetElement.scrollIntoView({ behavior: 'smooth' });
-            document.getElementById('mobileMenu').classList.add('hidden');
-          }
+          document.querySelector(targetId)?.scrollIntoView({ behavior: 'smooth' });
+          document.getElementById('mobileMenu')?.classList.add('hidden');
         }
       });
     });
     
     // Modal
     const modal = document.getElementById('modalOrcamento');
-    const openModalButtons = document.querySelectorAll('#openModalBtnHeader, #openModalBtnMobile, .open-modal-orcamento');
+    const openModalBtns = document.querySelectorAll('#openModalBtnHeader, #openModalBtnMobile, .open-modal-orcamento');
     const closeModalBtn = document.getElementById('closeModalBtn');
-    
-    function openModal() { 
-      modal.classList.remove('invisible', 'opacity-0'); 
-      modal.classList.add('visible', 'opacity-100'); 
-      document.body.style.overflow = 'hidden'; 
-    }
-    function closeModal() { 
-      modal.classList.add('invisible', 'opacity-0'); 
-      modal.classList.remove('visible', 'opacity-100'); 
-      document.body.style.overflow = ''; 
-    }
-    openModalButtons.forEach(btn => btn.addEventListener('click', openModal));
+    function openModal() { modal.classList.remove('invisible', 'opacity-0'); modal.classList.add('visible', 'opacity-100'); document.body.style.overflow = 'hidden'; }
+    function closeModal() { modal.classList.add('invisible', 'opacity-0'); modal.classList.remove('visible', 'opacity-100'); document.body.style.overflow = ''; }
+    openModalBtns.forEach(btn => btn.addEventListener('click', openModal));
     if(closeModalBtn) closeModalBtn.addEventListener('click', closeModal);
     modal.addEventListener('click', (e) => { if(e.target === modal) closeModal(); });
     
-    // Simulador atualizado para incluir Residencial
+    // Simulador
     const btnSimular = document.getElementById('btnSimular');
     const consumoInput = document.getElementById('consumoKwh');
     const tipoSelect = document.getElementById('tipoCliente');
     const resultadoDiv = document.getElementById('resultadoSimulacao');
-    
     function calcularEconomia(consumo, tipo) {
-      if(!consumo || consumo <= 0) return { economiaPercent: null, payback: null };
-      let economiaPercent = 0;
-      let payback = 0;
-      if(tipo === 'residencial') { economiaPercent = Math.floor(Math.random() * (85 - 50 + 1) + 50); payback = +(Math.random() * (5 - 3) + 3).toFixed(1); }
-      else if(tipo === 'rural') { economiaPercent = Math.floor(Math.random() * (70 - 45 + 1) + 45); payback = +(Math.random() * (4 - 2.5) + 2.5).toFixed(1); }
-      else if(tipo === 'datacenter') { economiaPercent = Math.floor(Math.random() * (55 - 30 + 1) + 30); payback = +(Math.random() * (5 - 3) + 3).toFixed(1); }
-      else { economiaPercent = Math.floor(Math.random() * (65 - 40 + 1) + 40); payback = +(Math.random() * (4 - 2) + 2).toFixed(1); }
-      return { economiaPercent, payback };
+      if(!consumo || consumo <= 0) return null;
+      if(tipo === 'residencial') return { economia: Math.floor(Math.random() * (85 - 50 + 1) + 50), payback: (Math.random() * (5 - 3) + 3).toFixed(1) };
+      if(tipo === 'rural') return { economia: Math.floor(Math.random() * (70 - 45 + 1) + 45), payback: (Math.random() * (4 - 2.5) + 2.5).toFixed(1) };
+      if(tipo === 'datacenter') return { economia: Math.floor(Math.random() * (55 - 30 + 1) + 30), payback: (Math.random() * (5 - 3) + 3).toFixed(1) };
+      return { economia: Math.floor(Math.random() * (65 - 40 + 1) + 40), payback: (Math.random() * (4 - 2) + 2).toFixed(1) };
     }
-    
     btnSimular.addEventListener('click', () => {
       const consumo = parseFloat(consumoInput.value);
       const tipo = tipoSelect.value;
       if(isNaN(consumo) || consumo <= 0) {
         resultadoDiv.classList.remove('hidden');
-        resultadoDiv.innerHTML = '<i class="fas fa-exclamation-triangle text-yellow-600"></i> Por favor, insira um consumo válido (ex: 300 kWh).';
+        resultadoDiv.innerHTML = '⚠️ Por favor, insira um consumo válido (ex: 300 kWh)';
         resultadoDiv.classList.add('bg-yellow-50', 'text-yellow-800');
-        resultadoDiv.classList.remove('bg-green-100');
         return;
       }
-      const { economiaPercent, payback } = calcularEconomia(consumo, tipo);
+      const result = calcularEconomia(consumo, tipo);
       resultadoDiv.classList.remove('hidden', 'bg-yellow-50', 'text-yellow-800');
       resultadoDiv.classList.add('bg-green-100', 'text-gray-800');
-      resultadoDiv.innerHTML = `<i class="fas fa-chart-line text-green-700 mr-1"></i> Sua economia estimada é de ${economiaPercent}% e payback de ${payback} anos! Baseado no perfil ${tipoSelect.options[tipoSelect.selectedIndex].text}.`;
+      resultadoDiv.innerHTML = `<i class="fas fa-chart-line text-green-700 mr-1"></i> Sua economia estimada é de ${result.economia}% e payback de ${result.payback} anos!`;
     });
     
-    // Formulário contato -> WhatsApp
-    const contatoForm = document.getElementById('contatoForm');
-    const formFeedback = document.getElementById('formFeedback');
-    
-    contatoForm.addEventListener('submit', (e) => {
+    // Formulário contato
+    document.getElementById('contatoForm')?.addEventListener('submit', (e) => {
       e.preventDefault();
       const nome = document.getElementById('nome').value.trim();
       const email = document.getElementById('email').value.trim();
       const telefone = document.getElementById('telefone').value.trim();
       const mensagem = document.getElementById('mensagem').value.trim();
-      
       if(!nome || !email || !telefone || !mensagem) {
-        formFeedback.classList.remove('hidden');
-        formFeedback.classList.add('text-red-600');
-        formFeedback.innerText = 'Por favor, preencha todos os campos obrigatórios.';
+        const fb = document.getElementById('formFeedback');
+        fb.classList.remove('hidden');
+        fb.classList.add('text-red-600');
+        fb.innerText = 'Por favor, preencha todos os campos.';
         return;
       }
-      if(!email.includes('@') || !email.includes('.')) {
-        formFeedback.classList.remove('hidden');
-        formFeedback.classList.add('text-red-600');
-        formFeedback.innerText = 'E-mail inválido.';
-        return;
-      }
-      
       sendToWhatsApp(nome, email, telefone, mensagem);
-      
-      formFeedback.classList.remove('hidden', 'text-red-600');
-      formFeedback.classList.add('text-green-600');
-      formFeedback.innerText = 'Redirecionando para o WhatsApp... Envie a mensagem para finalizar.';
-      contatoForm.reset();
-      setTimeout(() => { formFeedback.classList.add('hidden'); }, 5000);
+      const fb = document.getElementById('formFeedback');
+      fb.classList.remove('hidden', 'text-red-600');
+      fb.classList.add('text-green-600');
+      fb.innerText = 'Redirecionando para o WhatsApp...';
+      document.getElementById('contatoForm').reset();
+      setTimeout(() => fb.classList.add('hidden'), 5000);
     });
     
-    // Modal form -> WhatsApp
-    const modalForm = document.getElementById('modalForm');
-    const modalFeedback = document.getElementById('modalFeedback');
-    
-    modalForm.addEventListener('submit', (e) => {
+    // Modal form
+    document.getElementById('modalForm')?.addEventListener('submit', (e) => {
       e.preventDefault();
-      const nomeModal = document.getElementById('modalNome').value.trim();
-      const emailModal = document.getElementById('modalEmail').value.trim();
-      const telefoneModal = document.getElementById('modalTelefone').value.trim();
-      const interesse = document.getElementById('modalInteresse').options[document.getElementById('modalInteresse').selectedIndex].text;
-      const msgModal = document.getElementById('modalMsg').value.trim();
-      
-      if(!nomeModal || !emailModal || !telefoneModal) {
-        modalFeedback.classList.remove('hidden');
-        modalFeedback.innerText = 'Preencha nome, e-mail e telefone.';
-        modalFeedback.classList.add('text-red-600');
+      const nome = document.getElementById('modalNome').value.trim();
+      const email = document.getElementById('modalEmail').value.trim();
+      const telefone = document.getElementById('modalTelefone').value.trim();
+      const interesse = document.getElementById('modalInteresse').value;
+      const msg = document.getElementById('modalMsg').value.trim() || 'Solicitação de orçamento';
+      if(!nome || !email || !telefone) {
+        const mf = document.getElementById('modalFeedback');
+        mf.classList.remove('hidden');
+        mf.classList.add('text-red-600');
+        mf.innerText = 'Preencha nome, e-mail e telefone.';
         return;
       }
-      if(!emailModal.includes('@')) {
-        modalFeedback.classList.remove('hidden');
-        modalFeedback.innerText = 'E-mail inválido.';
-        modalFeedback.classList.add('text-red-600');
-        return;
-      }
-      
-      const mensagemCompleta = `Olá! Meu nome é ${nomeModal}.%0AInteresse: ${interesse}%0A${msgModal ? `%0ADetalhes: ${msgModal}` : ''}`;
-      
-      sendToWhatsApp(nomeModal, emailModal, telefoneModal, mensagemCompleta, interesse);
-      
-      modalFeedback.classList.remove('hidden', 'text-red-600');
-      modalFeedback.classList.add('text-green-600');
-      modalFeedback.innerText = 'Redirecionando para o WhatsApp... Envie a mensagem para finalizar.';
-      modalForm.reset();
-      setTimeout(() => { closeModal(); modalFeedback.classList.add('hidden'); }, 2000);
+      sendToWhatsApp(nome, email, telefone, msg, interesse);
+      const mf = document.getElementById('modalFeedback');
+      mf.classList.remove('hidden', 'text-red-600');
+      mf.classList.add('text-green-600');
+      mf.innerText = 'Redirecionando para o WhatsApp...';
+      document.getElementById('modalForm').reset();
+      setTimeout(() => { closeModal(); mf.classList.add('hidden'); }, 2000);
     });
     
-    // Mobile menu toggle
+    // Mobile menu
     const mobileBtn = document.getElementById('mobileMenuBtn');
     const mobileMenu = document.getElementById('mobileMenu');
-    if(mobileBtn) {
-      mobileBtn.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
-      });
-    }
+    if(mobileBtn) mobileBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
   </script>
 </body>
 </html>
-
