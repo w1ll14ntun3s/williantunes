@@ -1,10 +1,12 @@
+mai.24 17:09
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   
-  <!-- Google Analytics GA4 (substitua G-XXXXXXXX pelo seu ID) -->
+  <!-- Google Analytics GA4 (substitua G-78WP2T1D18 pelo seu ID) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-78WP2T1D18"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -18,26 +20,83 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://cdnjs.cloudflare.com">
   
+  <!-- Pré-carregamento de fontes críticas -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" as="style">
+  
   <meta name="description" content="WA Solar & Systems - Energia solar para áreas rurais, residências, data centers e pequenas/médias empresas. Economia, sustentabilidade e independência energética.">
   <meta name="keywords" content="energia solar, energia solar residencial, placa solar para casa, áreas rurais, data centers, pequenas empresas, economia solar">
   <meta name="author" content="WA Solar & Systems">
   <meta name="robots" content="index, follow">
   <title>WA Solar & Systems | Energia Solar para Residências, Empresas, Data Centers e Áreas Rurais</title>
   
-  <!-- CSS CRÍTICO INLINE (não bloqueia renderização) -->
+  <!-- CSS CRÍTICO INLINE com font-display otimizado -->
   <style>
-    /* Reset e estilos críticos */
+    /* ===== FONTES OTIMIZADAS COM FONT-DISPLAY: SWAP ===== */
+    /* Carrega fonte personalizada sem bloquear renderização */
+    @font-face {
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url('https://fonts.gstatic.com/s/inter/v12/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2JL7W0Q5n-wU.woff2') format('woff2');
+    }
+    
+    @font-face {
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 500;
+      font-display: swap;
+      src: url('https://fonts.gstatic.com/s/inter/v12/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2JL7W0Q5n-wU.woff2') format('woff2');
+    }
+    
+    @font-face {
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 600;
+      font-display: swap;
+      src: url('https://fonts.gstatic.com/s/inter/v12/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2JL7W0Q5n-wU.woff2') format('woff2');
+    }
+    
+    @font-face {
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 700;
+      font-display: swap;
+      src: url('https://fonts.gstatic.com/s/inter/v12/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2JL7W0Q5n-wU.woff2') format('woff2');
+    }
+    
+    @font-face {
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 800;
+      font-display: swap;
+      src: url('https://fonts.gstatic.com/s/inter/v12/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2JL7W0Q5n-wU.woff2') format('woff2');
+    }
+    
+    /* Reset e estilos críticos com fallback de fontes nativas */
     *, *::before, *::after {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
     
+    /* 
+      Sistema de fontes em cascata:
+      - Primeiro tenta carregar a fonte personalizada (Inter)
+      - Se falhar ou estiver carregando, usa fallbacks nativos
+      - Fallbacks garantem que o texto NUNCA fique invisível
+    */
     body {
-      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
       background-color: #f9fafb;
       color: #1f2937;
       line-height: 1.5;
+      font-display: swap; /* Propriedade adicional para garantir */
+    }
+    
+    /* Garantia de que textos nunca ficam invisíveis */
+    h1, h2, h3, h4, p, span, a, button, input, textarea, label {
+      font-display: swap;
     }
     
     /* Container e utilitários básicos */
@@ -241,6 +300,12 @@
   <!-- CSS não crítico carregado de forma preguiçosa (não bloqueia) -->
   <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"></noscript>
+  
+  <!-- Carregamento otimizado da fonte Inter com font-display swap -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+  </noscript>
 </head>
 <body class="bg-gray-50">
 
@@ -300,7 +365,7 @@
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           
-          <!-- NOVO CARD: Residencial -->
+          <!-- Card Residencial -->
           <div class="bg-gray-50 rounded-2xl p-6 shadow-md card-hover border border-gray-100">
             <div class="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"><i class="fas fa-home text-purple-700 text-3xl"></i></div>
             <h3 class="text-xl font-bold text-center text-gray-800">Residencial</h3>
