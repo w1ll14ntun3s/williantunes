@@ -95,14 +95,21 @@
       width: 100%;
     }
     
-    /* Botão centralizado no header abaixo do logo */
-    .header-logo-area {
+    /* HEADER - Logotipo e botão à esquerda, menu hambúrguer à direita */
+    .header-container {
       display: flex;
-      flex-direction: column;
-      align-items: center;
+      justify-content: space-between;
+      align-items: flex-start;
+      position: relative;
     }
     
-    .header-top {
+    .logo-area {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    
+    .logo-wrapper {
       display: flex;
       align-items: center;
       gap: 0.5rem;
@@ -110,6 +117,21 @@
     
     .btn-orcamento-header {
       margin-top: 0.75rem;
+    }
+    
+    .mobile-menu-btn-area {
+      position: absolute;
+      top: 0;
+      right: 1.25rem;
+    }
+    
+    /* Navegação desktop centralizada */
+    .nav-desktop {
+      display: flex;
+      justify-content: center;
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid #e5e7eb;
     }
     
     /* Grid responsivo */
@@ -355,19 +377,18 @@
       }
     }
     
-    /* Ajuste para desktop - header com botão abaixo do logo */
-    @media (min-width: 768px) {
-      .header-desktop {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-      }
-      .header-desktop .flex.items-center {
-        margin-bottom: 0.75rem;
-      }
-      .nav-wrapper {
-        margin: 1rem 0;
-      }
+    /* Menu hambúrguer estilizado */
+    .menu-hamburger {
+      font-size: 1.75rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #374151;
+      padding: 0.5rem;
+      transition: color 0.2s;
+    }
+    .menu-hamburger:hover {
+      color: #16a34a;
     }
   </style>
   
@@ -376,39 +397,43 @@
 </head>
 <body class="bg-gray-50">
 
-  <!-- HEADER - Botão de orçamento abaixo do logotipo -->
+  <!-- HEADER - Logotipo e botão à esquerda, menu hambúrguer à direita -->
   <header class="bg-white shadow-md sticky top-0 z-30">
     <div class="container mx-auto px-5 py-4">
-      <!-- Área do logotipo centralizada -->
-      <div class="flex flex-col items-center text-center">
-        <div class="flex items-center justify-center gap-2">
-          <i class="fas fa-sun text-yellow-500 text-3xl"></i>
-          <span class="font-bold text-2xl text-green-700">WA<span class="text-blue-600">Solar&Systems</span></span>
+      <div class="header-container">
+        <!-- Área do logotipo e botão (alinhados à esquerda) -->
+        <div class="logo-area">
+          <div class="logo-wrapper">
+            <i class="fas fa-sun text-yellow-500 text-3xl"></i>
+            <span class="font-bold text-2xl text-green-700">WA<span class="text-blue-600">Solar&Systems</span></span>
+          </div>
+          <!-- Botão de orçamento abaixo do logotipo -->
+          <button id="openModalBtnHeader" class="btn-primary btn-orcamento-header"><i class="fab fa-whatsapp"></i> Solicitar Orçamento</button>
         </div>
-        <!-- Botão de orçamento abaixo do logotipo (visível em mobile e desktop) -->
-        <button id="openModalBtnHeader" class="btn-primary mt-3"><i class="fab fa-whatsapp"></i> Solicitar Orçamento</button>
+        
+        <!-- Botão menu hambúrguer (canto superior direito) -->
+        <div class="mobile-menu-btn-area">
+          <button id="mobileMenuBtn" class="menu-hamburger" aria-label="Menu">☰</button>
+        </div>
       </div>
       
-      <!-- Navegação desktop -->
-      <nav class="hidden md:flex justify-center space-x-8 text-gray-700 font-medium mt-4">
+      <!-- Navegação desktop (centralizada) -->
+      <nav class="nav-desktop hidden md:flex justify-center space-x-8 text-gray-700 font-medium">
         <a href="#solucoes" class="nav-link hover:text-green-600 transition">Soluções</a>
         <a href="#beneficios" class="nav-link hover:text-green-600 transition">Benefícios</a>
         <a href="#simulador" class="nav-link hover:text-green-600 transition">Simulador</a>
         <a href="#depoimentos" class="nav-link hover:text-green-600 transition">Depoimentos</a>
         <a href="#contato" class="nav-link hover:text-green-600 transition">Contato</a>
       </nav>
-      
-      <!-- Botão menu mobile -->
-      <button id="mobileMenuBtn" class="md:hidden text-gray-600 text-2xl absolute top-4 right-5" aria-label="Menu">☰</button>
     </div>
     
-    <!-- Menu mobile -->
+    <!-- Menu mobile (dropdown) -->
     <div id="mobileMenu" class="hidden md:hidden bg-white border-t py-4 px-5 flex flex-col space-y-3 shadow-inner">
-      <a href="#solucoes" class="nav-link-mobile hover:text-green-600">Soluções</a>
-      <a href="#beneficios" class="nav-link-mobile hover:text-green-600">Benefícios</a>
-      <a href="#simulador" class="nav-link-mobile hover:text-green-600">Simulador</a>
-      <a href="#depoimentos" class="nav-link-mobile hover:text-green-600">Depoimentos</a>
-      <a href="#contato" class="nav-link-mobile hover:text-green-600">Contato</a>
+      <a href="#solucoes" class="nav-link-mobile hover:text-green-600 py-2">Soluções</a>
+      <a href="#beneficios" class="nav-link-mobile hover:text-green-600 py-2">Benefícios</a>
+      <a href="#simulador" class="nav-link-mobile hover:text-green-600 py-2">Simulador</a>
+      <a href="#depoimentos" class="nav-link-mobile hover:text-green-600 py-2">Depoimentos</a>
+      <a href="#contato" class="nav-link-mobile hover:text-green-600 py-2">Contato</a>
       <button id="openModalBtnMobile" class="btn-primary w-full"><i class="fab fa-whatsapp mr-1"></i> Orçamento</button>
     </div>
   </header>
@@ -586,193 +611,4 @@
           <div class="bg-white p-6 rounded-2xl shadow-md depoimento-card">
             <div class="depoimento-texto">
               <i class="fas fa-quote-left text-green-400 text-2xl mb-2 block"></i>
-              <p class="text-gray-700">"Na nossa empresa, o payback foi de apenas 3 anos. Melhor investimento que fizemos."</p>
-            </div>
-            <div class="depoimento-autor">
-              <div class="bg-yellow-200 rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0">
-                <i class="fas fa-chart-line text-yellow-800"></i>
-              </div>
-              <div class="autor-info">
-                <span class="autor-nome">Ricardo Alves</span>
-                <span class="autor-cargo">Móveis Alves - SP</span>
-              </div>
-            </div>
-          </div>
-          
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTATO - Botão centralizado -->
-    <section id="contato" class="py-16 bg-white">
-      <div class="container mx-auto px-5 max-w-3xl">
-        <div class="text-center"><h2 class="text-3xl font-bold text-gray-800">Fale com um especialista</h2><p class="text-gray-500 mb-6">Preencha e envie diretamente pelo WhatsApp</p></div>
-        <form id="contatoForm" class="bg-gray-50 p-6 rounded-2xl shadow-md">
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-            <input type="text" id="nome" placeholder="Nome completo*" class="form-input" required>
-            <input type="email" id="email" placeholder="E-mail*" class="form-input" required>
-          </div>
-          <div class="mb-4"><input type="tel" id="telefone" placeholder="Telefone com DDD*" class="form-input" required></div>
-          <div class="mb-4"><textarea id="mensagem" rows="3" placeholder="Conte-nos sobre seu projeto ou dúvida*" class="form-input" required></textarea></div>
-          <div class="btn-wrapper">
-            <button type="submit" class="btn-primary w-full justify-center"><i class="fab fa-whatsapp text-xl"></i> Enviar via WhatsApp</button>
-          </div>
-          <p id="formFeedback" class="text-sm mt-3 text-center hidden"></p>
-        </form>
-      </div>
-    </section>
-  </main>
-
-  <!-- RODAPÉ -->
-  <footer class="bg-gray-900 text-gray-300 py-10">
-    <div class="container mx-auto px-5 grid grid-cols-1 md:grid-cols-3 gap-6 text-center md:text-left">
-      <div><i class="fas fa-sun text-yellow-400 text-2xl mb-2 inline-block"></i><h3 class="font-bold text-white text-lg">WA Solar & Systems</h3><p class="text-sm">Energia solar com propósito técnico e sustentável.</p></div>
-      <div><p><i class="fab fa-whatsapp text-green-400 mr-2"></i> (11) 98171-3508</p><p class="mt-2"><i class="fas fa-envelope mr-2"></i> contato@wasolarsystems.com.br</p><p class="mt-2"><i class="fas fa-map-marker-alt mr-2"></i> Av. Solar, 1000 - São Paulo, SP</p></div>
-      <div class="flex flex-col items-center md:items-end gap-2"><div class="flex gap-4"><a href="#" class="social-link text-gray-300 hover:text-pink-400 transition text-2xl"><i class="fab fa-instagram"></i></a><a href="#" class="social-link text-gray-300 hover:text-blue-400 transition text-2xl"><i class="fab fa-linkedin"></i></a><a href="#" class="social-link text-gray-300 hover:text-green-400 transition text-2xl"><i class="fab fa-whatsapp"></i></a></div><p class="text-xs text-gray-500 mt-2">© 2025 WA Solar & Systems<br>Todos os direitos reservados</p></div>
-    </div>
-  </footer>
-
-  <!-- WhatsApp flutuante -->
-  <a href="https://wa.me/5511981713508?text=Olá!%20Gostaria%20de%20mais%20informações%20sobre%20energia%20solar." target="_blank" class="whatsapp-float"><i class="fab fa-whatsapp"></i></a>
-
-  <!-- MODAL -->
-  <div id="modalOrcamento" class="modal invisible opacity-0">
-    <div class="modal-content">
-      <span id="closeModalBtn" class="modal-close">&times;</span>
-      <h3 class="text-2xl font-bold text-gray-800 mb-2"><i class="fab fa-whatsapp text-green-500"></i> Solicitar orçamento</h3>
-      <p class="text-gray-500 mb-4">Preencha e enviaremos seu orçamento pelo WhatsApp.</p>
-      <form id="modalForm">
-        <input type="text" id="modalNome" placeholder="Nome completo*" class="form-input mb-3" required>
-        <input type="email" id="modalEmail" placeholder="E-mail*" class="form-input mb-3" required>
-        <input type="tel" id="modalTelefone" placeholder="Telefone com DDD*" class="form-input mb-3" required>
-        <select id="modalInteresse" class="form-input mb-3">
-          <option value="Residencial">Residencial</option>
-          <option value="Área Rural">Área Rural</option>
-          <option value="Data Center">Data Center</option>
-          <option value="PME">Pequena/Média Empresa</option>
-        </select>
-        <textarea id="modalMsg" rows="2" placeholder="Mensagem adicional" class="form-input mb-3"></textarea>
-        <div class="btn-wrapper">
-          <button type="submit" class="btn-primary w-full justify-center"><i class="fab fa-whatsapp text-xl"></i> Enviar orçamento</button>
-        </div>
-        <p id="modalFeedback" class="text-xs text-center mt-2 text-green-600 hidden"></p>
-      </form>
-    </div>
-  </div>
-
-  <script>
-    const WHATSAPP_NUMBER = '5511981713508';
-    function sendToWhatsApp(nome, email, telefone, mensagem, interesse = null) {
-      let texto = `*NOVO CONTATO - WA SOLAR & SYSTEMS*%0A%0A`;
-      texto += `*Nome:* ${nome}%0A`;
-      texto += `*E-mail:* ${email}%0A`;
-      texto += `*Telefone:* ${telefone}%0A`;
-      if (interesse) texto += `*Interesse:* ${interesse}%0A`;
-      texto += `*Mensagem:* ${mensagem}%0A%0A`;
-      texto += `Enviado pelo site WA Solar & Systems`;
-      window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${texto}`, '_blank');
-    }
-    
-    // Links âncora
-    document.querySelectorAll('.nav-link, .nav-link-mobile').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href');
-        if (targetId && targetId.startsWith('#')) {
-          document.querySelector(targetId)?.scrollIntoView({ behavior: 'smooth' });
-          document.getElementById('mobileMenu')?.classList.add('hidden');
-        }
-      });
-    });
-    
-    // Modal
-    const modal = document.getElementById('modalOrcamento');
-    const openModalBtns = document.querySelectorAll('#openModalBtnHeader, #openModalBtnMobile, .open-modal-orcamento');
-    const closeModalBtn = document.getElementById('closeModalBtn');
-    function openModal() { modal.classList.remove('invisible', 'opacity-0'); modal.classList.add('visible', 'opacity-100'); document.body.style.overflow = 'hidden'; }
-    function closeModal() { modal.classList.add('invisible', 'opacity-0'); modal.classList.remove('visible', 'opacity-100'); document.body.style.overflow = ''; }
-    openModalBtns.forEach(btn => btn.addEventListener('click', openModal));
-    if(closeModalBtn) closeModalBtn.addEventListener('click', closeModal);
-    modal.addEventListener('click', (e) => { if(e.target === modal) closeModal(); });
-    
-    // Simulador
-    const btnSimular = document.getElementById('btnSimular');
-    const consumoInput = document.getElementById('consumoKwh');
-    const tipoSelect = document.getElementById('tipoCliente');
-    const resultadoDiv = document.getElementById('resultadoSimulacao');
-    function calcularEconomia(consumo, tipo) {
-      if(!consumo || consumo <= 0) return null;
-      if(tipo === 'residencial') return { economia: Math.floor(Math.random() * (85 - 50 + 1) + 50), payback: (Math.random() * (5 - 3) + 3).toFixed(1) };
-      if(tipo === 'rural') return { economia: Math.floor(Math.random() * (70 - 45 + 1) + 45), payback: (Math.random() * (4 - 2.5) + 2.5).toFixed(1) };
-      if(tipo === 'datacenter') return { economia: Math.floor(Math.random() * (55 - 30 + 1) + 30), payback: (Math.random() * (5 - 3) + 3).toFixed(1) };
-      return { economia: Math.floor(Math.random() * (65 - 40 + 1) + 40), payback: (Math.random() * (4 - 2) + 2).toFixed(1) };
-    }
-    btnSimular.addEventListener('click', () => {
-      const consumo = parseFloat(consumoInput.value);
-      const tipo = tipoSelect.value;
-      if(isNaN(consumo) || consumo <= 0) {
-        resultadoDiv.classList.remove('hidden');
-        resultadoDiv.innerHTML = '⚠️ Por favor, insira um consumo válido (ex: 300 kWh)';
-        resultadoDiv.classList.add('bg-yellow-50', 'text-yellow-800');
-        return;
-      }
-      const result = calcularEconomia(consumo, tipo);
-      resultadoDiv.classList.remove('hidden', 'bg-yellow-50', 'text-yellow-800');
-      resultadoDiv.classList.add('bg-green-100', 'text-gray-800');
-      resultadoDiv.innerHTML = `<i class="fas fa-chart-line text-green-700 mr-1"></i> Sua economia estimada é de ${result.economia}% e payback de ${result.payback} anos!`;
-    });
-    
-    // Formulário contato
-    document.getElementById('contatoForm')?.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const nome = document.getElementById('nome').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const telefone = document.getElementById('telefone').value.trim();
-      const mensagem = document.getElementById('mensagem').value.trim();
-      if(!nome || !email || !telefone || !mensagem) {
-        const fb = document.getElementById('formFeedback');
-        fb.classList.remove('hidden');
-        fb.classList.add('text-red-600');
-        fb.innerText = 'Por favor, preencha todos os campos.';
-        return;
-      }
-      sendToWhatsApp(nome, email, telefone, mensagem);
-      const fb = document.getElementById('formFeedback');
-      fb.classList.remove('hidden', 'text-red-600');
-      fb.classList.add('text-green-600');
-      fb.innerText = 'Redirecionando para o WhatsApp...';
-      document.getElementById('contatoForm').reset();
-      setTimeout(() => fb.classList.add('hidden'), 5000);
-    });
-    
-    // Modal form
-    document.getElementById('modalForm')?.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const nome = document.getElementById('modalNome').value.trim();
-      const email = document.getElementById('modalEmail').value.trim();
-      const telefone = document.getElementById('modalTelefone').value.trim();
-      const interesse = document.getElementById('modalInteresse').value;
-      const msg = document.getElementById('modalMsg').value.trim() || 'Solicitação de orçamento';
-      if(!nome || !email || !telefone) {
-        const mf = document.getElementById('modalFeedback');
-        mf.classList.remove('hidden');
-        mf.classList.add('text-red-600');
-        mf.innerText = 'Preencha nome, e-mail e telefone.';
-        return;
-      }
-      sendToWhatsApp(nome, email, telefone, msg, interesse);
-      const mf = document.getElementById('modalFeedback');
-      mf.classList.remove('hidden', 'text-red-600');
-      mf.classList.add('text-green-600');
-      mf.innerText = 'Redirecionando para o WhatsApp...';
-      document.getElementById('modalForm').reset();
-      setTimeout(() => { closeModal(); mf.classList.add('hidden'); }, 2000);
-    });
-    
-    // Mobile menu
-    const mobileBtn = document.getElementById('mobileMenuBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-    if(mobileBtn) mobileBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
-  </script>
-</body>
-</html>
+              <p class="text-gray-700">"
