@@ -38,6 +38,14 @@
       background-color: #f9fafb;
       color: #1f2937;
       line-height: 1.5;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    /* Faz o main ocupar espaço restante e o rodapé ficar no final */
+    main {
+      flex: 1;
     }
     
     /* Container e utilitários básicos */
@@ -264,6 +272,50 @@
     /* Scroll suave */
     html { scroll-behavior: smooth; }
     section { scroll-margin-top: 80px; }
+    
+    /* CORREÇÃO: Depoimentos - nome e descrição sempre juntos */
+    .depoimento-card {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+    
+    .depoimento-texto {
+      flex: 1;
+    }
+    
+    .depoimento-autor {
+      margin-top: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      border-top: 1px solid #e5e7eb;
+      padding-top: 1rem;
+    }
+    
+    .autor-info {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .autor-nome {
+      font-weight: 700;
+      color: #1f2937;
+    }
+    
+    .autor-cargo {
+      font-size: 0.75rem;
+      color: #6b7280;
+    }
+    
+    /* Responsivo para mobile */
+    @media (max-width: 640px) {
+      .depoimento-autor {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
   </style>
   
   <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -401,15 +453,79 @@
       </div>
     </section>
 
-    <!-- DEPOIMENTOS -->
+    <!-- DEPOIMENTOS - CORRIGIDO: nomes e descrições sempre juntos -->
     <section id="depoimentos" class="py-16 bg-blue-50">
       <div class="container mx-auto px-5">
-        <div class="text-center mb-12"><h2 class="text-3xl font-bold text-gray-800">Quem confia na WA Solar & Systems</h2><p class="text-gray-600">Cases reais de clientes satisfeitos</p></div>
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-gray-800">Quem confia na WA Solar & Systems</h2>
+          <p class="text-gray-600">Cases reais de clientes satisfeitos</p>
+        </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div class="bg-white p-6 rounded-2xl shadow-md italic"><i class="fas fa-quote-left text-green-400 text-2xl mb-2 block"></i><p class="text-gray-700">“Instalamos na minha casa e a economia foi imediata. Minha conta caiu de R$ 600 para R$ 50!”</p><div class="flex items-center gap-3 mt-4"><div class="bg-purple-200 rounded-full w-10 h-10 flex items-center justify-center"><i class="fas fa-user text-purple-800"></i></div><div><strong class="block">Ana Paula</strong><span class="text-sm text-gray-500">Proprietária - SP</span></div></div></div>
-          <div class="bg-white p-6 rounded-2xl shadow-md italic"><i class="fas fa-quote-left text-green-400 text-2xl mb-2 block"></i><p class="text-gray-700">“No sítio, eliminamos o gerador a diesel. Economia de 70% e mais autonomia.”</p><div class="flex items-center gap-3 mt-4"><div class="bg-green-200 rounded-full w-10 h-10 flex items-center justify-center"><i class="fas fa-user text-green-800"></i></div><div><strong class="block">João da Silva</strong><span class="text-sm text-gray-500">Produtor rural - GO</span></div></div></div>
-          <div class="bg-white p-6 rounded-2xl shadow-md italic"><i class="fas fa-quote-left text-green-400 text-2xl mb-2 block"></i><p class="text-gray-700">“Nosso data center reduziu custos de refrigeração em 40% com a integração solar.”</p><div class="flex items-center gap-3 mt-4"><div class="bg-blue-200 rounded-full w-10 h-10 flex items-center justify-center"><i class="fas fa-server text-blue-800"></i></div><div><strong class="block">Carla Mendes</strong><span class="text-sm text-gray-500">CTO - DataCore</span></div></div></div>
-          <div class="bg-white p-6 rounded-2xl shadow-md italic"><i class="fas fa-quote-left text-green-400 text-2xl mb-2 block"></i><p class="text-gray-700">“Na nossa empresa, o payback foi de apenas 3 anos. Melhor investimento que fizemos.”</p><div class="flex items-center gap-3 mt-4"><div class="bg-yellow-200 rounded-full w-10 h-10 flex items-center justify-center"><i class="fas fa-chart-line text-yellow-800"></i></div><div><strong class="block">Ricardo Alves</strong><span class="text-sm text-gray-500">Móveis Alves - SP</span></div></div></div>
+          
+          <div class="bg-white p-6 rounded-2xl shadow-md depoimento-card">
+            <div class="depoimento-texto">
+              <i class="fas fa-quote-left text-green-400 text-2xl mb-2 block"></i>
+              <p class="text-gray-700">"Instalamos na minha casa e a economia foi imediata. Minha conta caiu de R$ 600 para R$ 50!"</p>
+            </div>
+            <div class="depoimento-autor">
+              <div class="bg-purple-200 rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0">
+                <i class="fas fa-user text-purple-800"></i>
+              </div>
+              <div class="autor-info">
+                <span class="autor-nome">Ana Paula</span>
+                <span class="autor-cargo">Proprietária - SP</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="bg-white p-6 rounded-2xl shadow-md depoimento-card">
+            <div class="depoimento-texto">
+              <i class="fas fa-quote-left text-green-400 text-2xl mb-2 block"></i>
+              <p class="text-gray-700">"No sítio, eliminamos o gerador a diesel. Economia de 70% e mais autonomia."</p>
+            </div>
+            <div class="depoimento-autor">
+              <div class="bg-green-200 rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0">
+                <i class="fas fa-user text-green-800"></i>
+              </div>
+              <div class="autor-info">
+                <span class="autor-nome">João da Silva</span>
+                <span class="autor-cargo">Produtor rural - GO</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="bg-white p-6 rounded-2xl shadow-md depoimento-card">
+            <div class="depoimento-texto">
+              <i class="fas fa-quote-left text-green-400 text-2xl mb-2 block"></i>
+              <p class="text-gray-700">"Nosso data center reduziu custos de refrigeração em 40% com a integração solar."</p>
+            </div>
+            <div class="depoimento-autor">
+              <div class="bg-blue-200 rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0">
+                <i class="fas fa-server text-blue-800"></i>
+              </div>
+              <div class="autor-info">
+                <span class="autor-nome">Carla Mendes</span>
+                <span class="autor-cargo">CTO - DataCore</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="bg-white p-6 rounded-2xl shadow-md depoimento-card">
+            <div class="depoimento-texto">
+              <i class="fas fa-quote-left text-green-400 text-2xl mb-2 block"></i>
+              <p class="text-gray-700">"Na nossa empresa, o payback foi de apenas 3 anos. Melhor investimento que fizemos."</p>
+            </div>
+            <div class="depoimento-autor">
+              <div class="bg-yellow-200 rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0">
+                <i class="fas fa-chart-line text-yellow-800"></i>
+              </div>
+              <div class="autor-info">
+                <span class="autor-nome">Ricardo Alves</span>
+                <span class="autor-cargo">Móveis Alves - SP</span>
+              </div>
+            </div>
+          </div>
+          
         </div>
       </div>
     </section>
@@ -432,7 +548,7 @@
     </section>
   </main>
 
-  <!-- RODAPÉ -->
+  <!-- RODAPÉ - AGORA FICA NO FINAL DA PÁGINA -->
   <footer class="bg-gray-900 text-gray-300 py-10">
     <div class="container mx-auto px-5 grid grid-cols-1 md:grid-cols-3 gap-6 text-center md:text-left">
       <div><i class="fas fa-sun text-yellow-400 text-2xl mb-2 inline-block"></i><h3 class="font-bold text-white text-lg">WA Solar & Systems</h3><p class="text-sm">Energia solar com propósito técnico e sustentável.</p></div>
