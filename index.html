@@ -1,3 +1,5 @@
+jul.18 12:30
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -36,9 +38,7 @@
     .header-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:0}
     .logo-area{display:flex;flex-direction:column;align-items:flex-start}
     .logo-wrapper{display:flex;align-items:center;gap:0.5rem;cursor:pointer;text-decoration:none}
-    .logo-text{font-weight:700;font-size:1.5rem;line-height:2rem}
-    .logo-text span:first-child{color:#166534}
-    .logo-text span:last-child{color:#2563eb}
+    .logo-img{max-width:180px;height:auto;display:block}
     .btn-orcamento-header{margin-top:0.75rem}
     .menu-hamburger{font-size:1.75rem;background:none;border:none;cursor:pointer;color:#374151;padding:0.25rem;transition:color 0.2s}
     
@@ -165,10 +165,8 @@
     .footer{background:#111827;color:#9ca3af;padding:3rem 0 2rem;margin-top:auto}
     .footer-grid{display:grid;grid-template-columns:1fr;gap:2rem;margin-bottom:2rem}
     .footer-title{color:#fff;font-weight:600;margin-bottom:1rem;font-size:1.125rem;text-align:center}
-    .footer-logo{display:flex;align-items:center;justify-content:center;gap:0.5rem;margin-bottom:1rem}
-    .footer-logo span{font-weight:700;font-size:1.25rem}
-    .footer-logo span:first-child{color:#fff}
-    .footer-logo span:last-child{color:#4ade80}
+    .footer-logo{display:flex;align-items:center;justify-content:center;margin-bottom:1rem}
+    .footer-logo-img{max-width:160px;height:auto;display:block;margin:0 auto}
     .footer-description{font-size:0.875rem;color:#9ca3af;text-align:center}
     .footer-links{list-style:none;text-align:center;padding:0;margin:0}
     .footer-links li{margin-bottom:0.5rem;list-style:none}
@@ -219,6 +217,8 @@
     @media (max-width:640px){
       .depoimento-autor{flex-direction:column;text-align:center}
       .text-4xl{font-size:1.875rem}
+      .logo-img{max-width:140px}
+      .footer-logo-img{max-width:130px}
     }
     
     /* Lazy loading para imagens */
@@ -241,8 +241,7 @@
         <div class="header-top">
           <div class="logo-area">
             <div class="logo-wrapper" id="logoLink" aria-label="WA Solar & Systems - Voltar ao topo">
-              <i class="fas fa-sun text-yellow-500 text-3xl" aria-hidden="true"></i>
-              <span class="logo-text"><span>WA</span><span>Solar&Systems</span></span>
+              <img src="1000004847.webp" alt="WA Solar & Systems - Energia Solar" class="logo-img" width="180" height="auto">
             </div>
             <button id="openModalBtnHeader" class="btn-primary btn-orcamento-header" aria-label="Solicitar orçamento pelo WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i> Solicitar Orçamento</button>
           </div>
@@ -462,7 +461,9 @@
     <div class="container">
       <div class="footer-grid">
         <div>
-          <div class="footer-logo"><i class="fas fa-sun text-yellow-400 text-2xl" aria-hidden="true"></i><span><span>WA</span><span>Solar&Systems</span></span></div>
+          <div class="footer-logo">
+            <img src="1000004847.webp" alt="WA Solar & Systems - Energia Solar" class="footer-logo-img" width="160" height="auto">
+          </div>
           <p class="footer-description">Energia solar com propósito técnico e sustentável. Transformando luz em economia para seu negócio ou residência.</p>
         </div>
         <div>
@@ -584,3 +585,4 @@
   </script>
 </body>
 </html>
+
